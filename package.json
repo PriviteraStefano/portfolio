@@ -1,6 +1,14 @@
 {
   "name": "@lexington/starter",
   "version": "0.0.1",
+  "devDependencies": {
+    "@astrojs/sitemap": "^3.1.6",
+    "@astrojs/tailwind": "^5.1.0",
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.13",
+    "astro": "^4.11.3",
+    "astro-icon": "^1.1.0"
+  },
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -9,11 +17,12 @@
     "preview": "astro preview",
     "astro": "astro"
   },
-  "devDependencies": {
-    "@astrojs/sitemap": "^3.1.6",
-    "@astrojs/tailwind": "^5.1.0",
-    "@tailwindcss/forms": "^0.5.7",
-    "@tailwindcss/typography": "^0.5.13",
-    "astro": "^4.11.3"
+  "dependencies": {
+    "@iconify-json/akar-icons": "^1.1.24",
+    "@iconify-json/devicon": "^1.1.50",
+    "@iconify-json/devicon-plain": "^1.1.47",
+    "@iconify-json/fa6-brands": "^1.1.20",
+    "@iconify-json/hugeicons": "^1.1.0",
+    "@iconify-json/teenyicons": "^1.1.9"
   }
 }
