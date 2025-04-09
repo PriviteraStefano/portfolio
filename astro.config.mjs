@@ -6,7 +6,7 @@ import icon from "astro-icon";
 // https://astro.build/config
 export default defineConfig({
     site: 'https://priviterastefano.github.io',
-    base: 'my-repo',
+    base: '/simple-portfolio',
     compressHTML: true,
     allowImportingTsExtensions: true,
     integrations: [
