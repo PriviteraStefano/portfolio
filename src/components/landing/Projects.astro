@@ -14,15 +14,15 @@ function calculateAosDuration(index: number) {
     <div class="space-y-2">
       <!-- Section Title and Decorative Elements -->
       <div
-        class="h-0.5 bg-secondary"
-        data-aos="fade-up"
-        data-aos-duration="1000"
+          class="h-0.5 bg-secondary"
+          data-aos="fade-up"
+          data-aos-duration="1000"
       >
       </div>
       <h3
-        class="text-secondary text-base font-medium"
-        data-aos="fade-up"
-        data-aos-duration="1500"
+          class="text-secondary text-base font-medium"
+          data-aos="fade-up"
+          data-aos-duration="1500"
       >
         <span>Latest</span>
         <span class="font-bold">projects</span>
@@ -30,17 +30,16 @@ function calculateAosDuration(index: number) {
     </div>
 
     <ul
-      class="mx-auto grid grid-cols-1 sm:grid-cols-2 text-secondary md:grid-cols-3 lg:grid-cols-4 items-start gap-6 mt-32"
-      role="list"
+        class="mx-auto grid grid-cols-1 sm:grid-cols-2 text-secondary md:grid-cols-3 lg:grid-cols-4 items-start gap-6 mt-32"
+        role="list"
     >
       {
         workProjects.map((project, index) => (
-          <li
-            class="flow-root h-full"
-            data-aos="fade-up"
-            data-aos-duration={calculateAosDuration(index)}
-          >
-            <a href={project.url}>
+            <li
+                class="flow-root h-full"
+                data-aos="fade-up"
+                data-aos-duration={calculateAosDuration(index)}
+            >
               <div class="h-full flex flex-col justify-between">
                 <div>
                   <p class="group-hover:text-secondary/70 text-secondary text-9xl font-black lg:rotate-90 xl:-translate-x-28 lg:-translate-x-16 lg:mb-8 xl:mb-0">
@@ -57,8 +56,7 @@ function calculateAosDuration(index: number) {
                   </p>-->
                 </div>
               </div>
-            </a>
-          </li>
+            </li>
         ))
       }
     </ul>

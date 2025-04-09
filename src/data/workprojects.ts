@@ -5,8 +5,9 @@ export interface Project {
 
 const gnMobile : Project = {
   title: "KMP Application",
-  description: "Engineered and developed a multimodule Kotlin Multiplatform application used by different customers " +
-    "to improve their warehouse efficiency. Compatible with industry standard ERPs such as Oracle JDE and NetSuite."
+  description: "Engineered and developed a multi-module Kotlin Multiplatform application and core library. Used by " +
+    "different customers to improve their warehouse efficiency with a focus on compatibility with industry standard ERPs " +
+    "such as Oracle JDE and NetSuite."
 }
 
 const arisIntegrations : Project = {
@@ -24,7 +25,8 @@ const oneDB : Project = {
 
 const landingPages : Project = {
   title: "Landing pages and documentations",
-  description: "Designed engaging landing pages and comprehensive project documentation using Astro."
+  description: "Designed engaging landing pages and comprehensive project documentation using Astro. " +
+    "This site was also created with it!"
 }
 
 export const workProjects = [
