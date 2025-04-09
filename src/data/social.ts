@@ -6,10 +6,16 @@ interface Social {
 
 export const socials: Social[] = [
   {
+    title: "Medium",
+    url: "https://medium.com/@priviatwork",
+    icon: "hugeicons:medium",
+  },
+  {
     title: "Github",
     url: "https://github.com/PriviteraStefano",
     icon: "hugeicons:github",
-  }, {
+  },
+  {
     title: "Linkedin",
     url: "https://www.linkedin.com/in/stefano-salvatore-privitera-b4b080290/",
     icon: "hugeicons:linkedin-02",
@@ -17,5 +23,5 @@ export const socials: Social[] = [
     title: "Mail",
     url: "mailto:priviatwork@gmail.com",
     icon: "hugeicons:mail-02",
-  }
+  },
 ]

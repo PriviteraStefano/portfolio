@@ -10,6 +10,7 @@
 import {Icon} from "astro-icon/components";
 
 import {socials} from "../../data/social.ts";
+import {techStack} from "../../data/techStack";
 ---
 <section class="bg-primary">
   <div
@@ -23,7 +24,7 @@ import {socials} from "../../data/social.ts";
       />
     </svg>
   </div>
-  <div class="px-8 2xl:max-w-7xl mx-auto pb-12">
+  <div class="px-8 2xl:max-w-7xl mx-auto pb-4">
     <div class="mt-6 space-y-2">
       <div
           class="h-0.5 bg-secondary"
@@ -35,25 +36,22 @@ import {socials} from "../../data/social.ts";
           data-aos="fade-up"
           data-aos-duration="1500">
         <div class="flex gap-2 items-center text-secondary">
-          <span class="font-semibold">Full Stack Developer</span>
-          <span class="font-semibold">|</span>
-          <span class="font-semibold">IT Consultant</span>
-          <span class="h-full border-secondary border"></span>
-          <a href="https://gntechonomy.com" class="text-secondary hover:underline">
-            GN Techonomy
-          </a>
+          <p class="font-semibold">Full Stack Developer</p>
+          <p class="font-semibold">|</p>
+          <p class="font-semibold">IT Consultant</p>
         </div>
-        <div>
-          <ul class="items-center inline-flex gap-3 relative">
+        <div class="w-full lg:w-fit">
+          <ul class="w-full items-center justify-evenly inline-flex gap-3 relative">
             {socials.map((social) => (
                 <li>
                   <a
                       href={social.url}
+                      aria-label={social.title}
                       class="text-secondary hover:text-black duration-200"
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel="noopener noref errer"
                   >
-                    <Icon name={social.icon}/>
+                    <Icon name={social.icon} style="fill:secondary" class="text-secondary"/>
                   </a
                   >
                 </li>
@@ -73,41 +71,40 @@ import {socials} from "../../data/social.ts";
       </div>
 
       <div
-          class="w-full mt-8 h-12 relative flex overflow-hidden border border-x-0 border-y-2 border-secondary py-2"
+          class="w-full mt-8 h-12 relative flex overflow-hidden border border-x-0 border-y-2 border-secondary py-2 group"
           data-aos="fade-up"
           data-aos-duration="3000"
       >
-        <div class="absolute left-0 inline-flex w-full animate-marquee whitespace-nowrap">
-          <Icon name="hugeicons:react" class="text-secondary w-6 h-6 mx-auto"/>
-          <Icon name="akar-icons:typescript-fill" class="text-secondary w-6 h-6 mx-auto"/>
-          <Icon name="fa6-brands:golang" class="text-secondary w-6 h-6 mx-auto"/>
-          <Icon name="devicon-plain:kotlin" class="text-secondary w-6 h-6 mx-auto"/>
-          <Icon name="akar-icons:android-fill" class="text-secondary w-6 h-6 mx-auto"/>
-          <Icon name="devicon-plain:flutter" class="text-secondary w-6 h-6 mx-auto"/>
-          <Icon name="akar-icons:javascript-fill" class="text-secondary w-6 h-6 mx-auto"/>
-          <Icon name="hugeicons:java" class="text-secondary w-6 h-6 mx-auto"/>
+        <div
+            class="absolute left-0 inline-flex w-full animate-marquee whitespace-nowrap group-hover:[animation-play-state:paused]">
+          {techStack.map((tech) => (
+              <a href={tech.url} class="flex flex-row group/tech gap-2 mx-auto" aria-label={tech.title}>
+                <Icon name={tech.icon} class="text-secondary w-6 h-6 "/>
+                <p class="hidden group-hover/tech:inline font-semibold text-secondary">{tech.title}</p>
+              </a>
+          ))}
         </div>
 
-        <div class="absolute right-0 w-full inline-flex animate-marquee2 whitespace-nowrap">
-          <Icon name="hugeicons:react" class="text-secondary w-6 h-6 mx-auto"/>
-          <Icon name="akar-icons:typescript-fill" class="text-secondary w-6 h-6 mx-auto"/>
-          <Icon name="fa6-brands:golang" class="text-secondary w-6 h-6 mx-auto"/>
-          <Icon name="devicon-plain:kotlin" class="text-secondary w-6 h-6 mx-auto"/>
-          <Icon name="akar-icons:android-fill" class="text-secondary w-6 h-6 mx-auto"/>
-          <Icon name="devicon-plain:flutter" class="text-secondary w-6 h-6 mx-auto"/>
-          <Icon name="akar-icons:javascript-fill" class="text-secondary w-6 h-6 mx-auto"/>
-          <Icon name="hugeicons:java" class="text-secondary w-6 h-6 mx-auto"/>
+        <div
+            class="absolute right-0 w-full inline-flex animate-marquee2 whitespace-nowrap group-hover:[animation-play-state:paused]">
+          {techStack.map((tech) => (
+              <a href={tech.url} class="flex flex-row group/tech gap-2 mx-auto" aria-label={tech.title}>
+                <Icon name={tech.icon} class="text-secondary w-6 h-6"/>
+                <p class="hidden group-hover/tech:inline font-semibold text-secondary">{tech.title}</p>
+              </a>
+          ))}
         </div>
 
       </div>
       <div
-          class="h-24 bg-secondary flex items-end p-4"
+          class="h-14 bg-secondary flex justify-end items-center p-4"
           data-aos="fade-up"
           data-aos-duration="3000"
           data-aos-delay="150">
+        <p style="font-family: 'Cedarville Cursive',serif" class="text-primary text-xs lg:text-base">
+          Privitera Stefano Salvatore
+        </p>
       </div>
     </div>
-
   </div>
-
 </section>

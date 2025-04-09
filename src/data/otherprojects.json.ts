@@ -2,7 +2,7 @@ export interface Template {
   url: string;
   description: string;
   title: string;
-};
+}
 
 const svggradients: Template = {
   url: "https://www.svggradients.com/",
@@ -21,11 +21,8 @@ const vscodethemes: Template = {
 };
 
 export const byName = {
-
   svggradients,
   quicksetup,
   vscodethemes,
-
-
 };
 export const otherprojects = Object.values(byName);

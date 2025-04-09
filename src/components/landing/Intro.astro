@@ -1,44 +1,38 @@
 ---
+import {whoAmI, whatIDo, whatILove, whatIsMyProfession, whereDoIWork} from "../../data/intro.ts";
 const company = "GN Techonomy";
 ---
 
 <section class="bg-primary">
   <div class="px-8 2xl:max-w-7xl mx-auto py-6">
-    <div class="grid grid-cols-1 lg:grid-cols-3 text-secondary gap-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-3 text-secondary gap-6">
       <div
           class="text-base lg:col-start-1 leading-relaxed"
           data-aos="fade-up"
           data-aos-duration="2000"
       >
-        <p>
-          I'm an IT Consultant and Full Stack Developer working at {company}.
-        </p>
-        <p>
-          I've been working in the IT industry since I graduated in Computer Science
-          from the University of Milan - Bicocca in 2023.
-        </p>
+        <h2 class="text-2xl italic font-bold">Who Am I?</h2>
+        <p>{whoAmI}</p>
+        <p>{whatIsMyProfession}</p>
+
       </div>
-      <p
+      <div
           class="text-base lg:row-start-2 lg:col-start-2 leading-relaxed"
           data-aos="fade-up"
           data-aos-duration="2000"
       >
-        In my almost one year of professional experience, I've honed my skills in creating and developing new projects,
-        always looking to expand my expertise across both front-end and back-end technologies.
-      </p>
+        <h2 class="text-2xl italic font-bold">Where do I work?</h2>
+        <p>{whereDoIWork}</p>
+
+      </div>
       <div
-          class="text-base lg:col-start-3 leading-relaxed"
+          class="text-base lg:col-start-3 lg:row-start-3 leading-relaxed"
           data-aos="fade-up"
           data-aos-duration="2500"
       >
-        <p>
-          Driven by a passion for innovation and continuous learning, I am always looking for new challenges
-          and opportunities to grow in the fast-paced world of IT.
-        </p>
+        <h2 class="text-2xl italic font-bold">My Experience</h2>
+        <p>{whatIDo}</p>
       </div>
     </div>
-
-
-
   </div>
 </section>
