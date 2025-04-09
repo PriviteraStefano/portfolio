@@ -5,7 +5,8 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://lexingtonthemes.com',
+    site: 'https://priviterastefano.github.io',
+    base: 'my-repo',
     compressHTML: true,
     allowImportingTsExtensions: true,
     integrations: [
