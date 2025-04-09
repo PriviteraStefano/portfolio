@@ -1,9 +1,10 @@
+/*
 export interface Template {
   url: string;
   title: string;
 };
 const one: Template = {
-  url: "https://bytes.dev/archives/29#:~:text=WickedBlocks%20is%20a%20collection%20of%20120%2B%20layout%20blocks%20and%20components%20built%20with%20Tailwind%20CSS%20ready%20to%20copy%2Dpaste%20into%20your%20Tailwind%20project.%20If%20you%27d%20like%20the%20New%20England%20version%2C%20check%20out%20WickedBlachs.%20My%20boy%27s%20wicked%20smaht",
+  url: "",
   title: "Bytes UI"
 };
 const two: Template = {
@@ -43,11 +44,7 @@ const ten: Template = {
   title: "Guia Dev Brasil"
 };
 export const byName = {
-one, two, three, four, five, six, seven, eight, nine, ten
-
-
-
-
-
+  one, two, three, four, five, six, seven, eight, nine, ten
 };
 export const features = Object.values(byName);
+*/
