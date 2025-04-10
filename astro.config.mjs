@@ -16,7 +16,7 @@ export default defineConfig({
             include: {
                 "hugeicons": ["react"],
                 "fa6-brands": ["golang"],
-                "devicon-plain": ["typescript", "java", "kotlin", "android", "flutter", "astro"],
+                "devicon-plain": ["javascript","typescript", "java", "kotlin", "android", "flutter", "astro"],
                 "lineicons": ["medium", "github", "linkedin", "envelope-1"]
             }
         })]
