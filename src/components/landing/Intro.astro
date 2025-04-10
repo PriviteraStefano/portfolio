@@ -1,19 +1,27 @@
 ---
-import {whoAmI, whatIDo, whatILove, whatIsMyProfession, whereDoIWork} from "../../data/intro.ts";
+import {aboutMe, whatIDo, whatILove, whatIsMyProfession, whereDoIWork} from "../../data/intro.ts";
 const company = "GN Techonomy";
 ---
 
 <section class="bg-primary">
   <div class="px-8 2xl:max-w-7xl mx-auto py-6">
-    <div class="grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-3 text-secondary gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-3 text-secondary gap-6">
       <div
           class="text-base lg:col-start-1 leading-relaxed"
           data-aos="fade-up"
           data-aos-duration="2000"
       >
-        <h2 class="text-2xl italic font-bold">Who Am I?</h2>
-        <p>{whoAmI}</p>
+        <h2 class="text-2xl italic font-bold">About me</h2>
+        <p>{aboutMe}</p>
         <p>{whatIsMyProfession}</p>
+      </div>
+      <div
+          class="text-base lg:col-start-3 leading-relaxed"
+          data-aos="fade-up"
+          data-aos-duration="2200"
+      >
+        <h2 class="text-2xl italic font-bold">Focus</h2>
+        <p>{whatILove}</p>
 
       </div>
       <div
@@ -21,7 +29,7 @@ const company = "GN Techonomy";
           data-aos="fade-up"
           data-aos-duration="2000"
       >
-        <h2 class="text-2xl italic font-bold">Where do I work?</h2>
+        <h2 class="text-2xl italic font-bold">Work</h2>
         <p>{whereDoIWork}</p>
 
       </div>

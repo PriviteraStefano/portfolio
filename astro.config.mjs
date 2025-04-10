@@ -14,11 +14,10 @@ export default defineConfig({
         sitemap(),
         icon({
             include: {
-                hugeicons: ["*"],
-                "fa6-brands": ["*"],
-                teenyicons: ["*"],
-                "akar-icons": ["*"],
-                "devicon-plain": ["*"],
+                "hugeicons": ["react"],
+                "fa6-brands": ["golang"],
+                "devicon-plain": ["typescript", "java", "kotlin", "android", "flutter", "astro"],
+                "lineicons": ["medium", "github", "linkedin", "envelope-1"]
             }
         })]
 });
