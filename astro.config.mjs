@@ -19,5 +19,13 @@ export default defineConfig({
                 "devicon-plain": ["javascript","typescript", "java", "kotlin", "android", "flutter", "astro"],
                 "lineicons": ["medium", "github", "linkedin", "envelope-1"]
             }
-        })]
+        })],
+    i18n: {
+        locales: ["en", "de"],
+        defaultLocale: "en",
+
+        routing: {
+            prefixDefaultLocale: true,
+        },
+    }
 });

@@ -1,6 +1,14 @@
 ---
-import {aboutMe, whatIDo, whatILove, whatIsMyProfession, whereDoIWork} from "../../data/intro.ts";
-const company = "GN Techonomy";
+import {getLangFromUrl, useTranslations} from "../../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const name = t('name')
+const about = t('about')
+const focus = t('focus')
+const work = t('work')
+const experience = t('experience')
+
 ---
 
 <section class="bg-primary">
@@ -12,8 +20,8 @@ const company = "GN Techonomy";
           data-aos-duration="2000"
       >
         <h2 class="text-2xl italic font-bold">About me</h2>
-        <p>{aboutMe}</p>
-        <p>{whatIsMyProfession}</p>
+        <p>{name}</p>
+        <p>{about}</p>
       </div>
       <div
           class="text-base lg:col-start-3 leading-relaxed"
@@ -21,7 +29,7 @@ const company = "GN Techonomy";
           data-aos-duration="2200"
       >
         <h2 class="text-2xl italic font-bold">Focus</h2>
-        <p>{whatILove}</p>
+        <p>{focus}</p>
 
       </div>
       <div
@@ -30,7 +38,7 @@ const company = "GN Techonomy";
           data-aos-duration="2000"
       >
         <h2 class="text-2xl italic font-bold">Work</h2>
-        <p>{whereDoIWork}</p>
+        <p>{work}</p>
 
       </div>
       <div
@@ -39,7 +47,7 @@ const company = "GN Techonomy";
           data-aos-duration="2500"
       >
         <h2 class="text-2xl italic font-bold">My Experience</h2>
-        <p>{whatIDo}</p>
+        <p>{experience}</p>
       </div>
     </div>
   </div>
