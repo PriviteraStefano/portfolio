@@ -25,8 +25,8 @@ module.exports = {
         },
       },
       colors: {
-        primary: "#fafafa",
-        secondary: "#0000ff",
+        primary: "#FBECCF",
+        secondary: "#112378",
       },
       fontFamily: {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],

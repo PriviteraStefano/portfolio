@@ -2,6 +2,7 @@ import {ui, defaultLang, languages} from './ui';
 
 export function getLangFromUrl(url: URL) {
   let lang = 'en'
+
   Object.keys(languages)
     .forEach(l => {
       if (url.pathname.includes(`/${l}/`)) {
