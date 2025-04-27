@@ -25,3 +25,19 @@
     font-family: InterVariable, sans-serif;
   }
 }
+
+@font-face {
+  font-family: 'TheFont';
+  src: url("https://garet.typeforward.com/assets/fonts/shared/TFMixVF.woff2") format('woff2');
+  /* Or if using the remote URL: */
+  /* src: url("https://garet.typeforward.com/assets/fonts/shared/TFMixVF.woff2") format('woff2'); */
+}
+
+.container {
+  container-type: inline-size;
+  overflow: hidden;
+}
+
+.horizontal .child {
+  font-size: 24cqw;
+}

@@ -1,12 +1,18 @@
 ---
 import {getLangFromUrl, useTranslations} from "../../i18n/utils";
+import Title from "./Title.astro";
+
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const name = t('name')
+const aboutMeTitle = t('about-me-title')
 const about = t('about')
+const focusTitle = t('focus-title')
 const focus = t('focus')
+const workTitle = t('work-title')
 const work = t('work')
+const experienceTitle = t('experience-title')
 const experience = t('experience')
 
 ---
@@ -19,16 +25,21 @@ const experience = t('experience')
           data-aos="fade-up"
           data-aos-duration="2000"
       >
-        <h2 class="text-2xl italic font-bold">About me</h2>
+        <h2 class="text-2xl font-bold">
+          {aboutMeTitle}
+        </h2>
         <p>{name}</p>
+        <br/>
         <p>{about}</p>
       </div>
       <div
-          class="text-base lg:col-start-3 leading-relaxed "
+          class="text-base lg:col-start-1 lg:row-start-3 leading-relaxed "
           data-aos="fade-up"
           data-aos-duration="2200"
       >
-        <h2 class="text-2xl italic font-bold">Focus</h2>
+        <h2 class="text-2xl font-bold">
+          {focusTitle}
+        </h2>
         <p>{focus}</p>
 
       </div>
@@ -37,7 +48,7 @@ const experience = t('experience')
           data-aos="fade-up"
           data-aos-duration="2000"
       >
-        <h2 class="text-2xl italic font-bold">Work</h2>
+        <h2 class="text-2xl font-bold">{workTitle}</h2>
         <p>{work}</p>
 
       </div>
@@ -46,7 +57,7 @@ const experience = t('experience')
           data-aos="fade-up"
           data-aos-duration="2500"
       >
-        <h2 class="text-2xl italic font-bold">Experience</h2>
+        <h2 class="text-2xl font-bold">{experienceTitle}</h2>
         <p>{experience}</p>
       </div>
     </div>
