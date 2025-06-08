@@ -1,6 +1,5 @@
 ---
 import {getLangFromUrl, useTranslations} from "../../i18n/utils";
-import Title from "./Title.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -19,9 +18,9 @@ const experience = t('experience')
 
 <section class="bg-primary dark:bg-secondary">
   <div class="px-8 2xl:max-w-7xl mx-auto py-6">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-3 text-secondary dark:text-primary gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 text-secondary dark:text-primary gap-6">
       <div
-          class="text-base lg:col-start-1 leading-relaxed"
+          class="text-base lg:hidden leading-relaxed"
           data-aos="fade-up"
           data-aos-duration="2000"
       >
@@ -33,7 +32,7 @@ const experience = t('experience')
         <p>{about}</p>
       </div>
       <div
-          class="text-base lg:col-start-1 lg:row-start-3 leading-relaxed "
+          class="text-base lg:col-start-1 lg:row-start-2 leading-relaxed "
           data-aos="fade-up"
           data-aos-duration="2200"
       >
@@ -44,7 +43,7 @@ const experience = t('experience')
 
       </div>
       <div
-          class="text-base lg:row-start-2 lg:col-start-2 leading-relaxed"
+          class="text-base lg:row-start-1 lg:col-start-2 leading-relaxed"
           data-aos="fade-up"
           data-aos-duration="2000"
       >
@@ -53,7 +52,7 @@ const experience = t('experience')
 
       </div>
       <div
-          class="text-base lg:col-start-3 lg:row-start-3 leading-relaxed"
+          class="text-base lg:col-start-3 lg:row-start-2 leading-relaxed"
           data-aos="fade-up"
           data-aos-duration="2500"
       >
