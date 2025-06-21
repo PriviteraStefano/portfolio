@@ -41,3 +41,16 @@
 .horizontal .child {
   font-size: 24cqw;
 }
+
+#holographic {
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(
+          to right,
+          rgb(194, 255, 182),
+          rgb(255, 163, 182),
+          rgb(221, 169, 255),
+          rgb(162, 209, 255)
+  );
+  background-size: 200%;
+}
