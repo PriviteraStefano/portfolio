@@ -1,29 +1,39 @@
 ---
-// Big SVG hero Name
-//-------------------
-//
-// If you want to change your name you will have to recreate it
-// in Figma or any other way you can export text as SVG
-// After you have exported it, you have to remove the size attributes from the SVG
-// this will allow the SVG become fill width and full height. It will also be responsive.
+
 
 import {Icon} from "astro-icon/components";
 
 import {socials} from "../../data/en/social";
 import {techStack} from "../../data/en/techStack";
+import {getLangFromUrl, useTranslations} from "../../i18n/utils";
+import TextPressure from "../../react/components/TextPressure"
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const name = t('name')
+const aboutMeTitle = t('about-me-title')
+const about = t('about')
+
 ---
-<section class="bg-primary dark:bg-secondary">
+<section class="bg-primary dark:bg-secondary flex flex-col justify-around lg:h-screen">
   <div
-      class="container horizontal px-8 2xl:max-w-7xl mx-auto pt-12"
+      class="mx-auto pt-12 px-8 w-full"
       data-aos="fade-up"
       data-aos-duration="1000">
-    <h1
+    <TextPressure
+        text="Portofolio"
+        textColor={"#FBECCF"}
+        className="text-secondary dark:text-primary"
+        client:visible
+    />
+    <!--<h1
         style="font-weight: 900"
         class="child text-center font-variable text-secondary dark:text-primary animate-breathe">
       Portfolio
-    </h1>
+    </h1>-->
   </div>
-  <div class="px-8 2xl:max-w-7xl mx-auto pb-4">
+  <div class="px-8 2xl:max-w-7xl w-full mx-auto pb-4">
     <div class="mt-6 space-y-2">
       <div
           class="h-0.5 bg-secondary dark:bg-primary"
@@ -105,6 +115,20 @@ import {techStack} from "../../data/en/techStack";
           Privitera Stefano Salvatore
         </p>
       </div>
+    </div>
+  </div>
+  <div class="hidden px-8 h-full py-auto 2xl:max-w-7xl lg:grid grid-cols-3 grid-rows-1 justify-start items-center mx-auto">
+    <div
+        class="text-base leading-relaxed "
+        data-aos="fade-up"
+        data-aos-duration="3000"
+    >
+      <h2 class="text-2xl font-bold">
+        {aboutMeTitle}
+      </h2>
+      <p>{name}</p>
+      <br/>
+      <p>{about}</p>
     </div>
   </div>
 </section>
