@@ -1,0 +1,13 @@
+---
+// BreatheAnimationTW.astro
+interface Props {
+  text: string;
+  className: string
+}
+
+const {className, text} = Astro.props;
+---
+
+<span class="child font-variable text-secondary dark:text-primary text-center animate-breathe" + className>
+    {text}
+</span>

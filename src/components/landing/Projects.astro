@@ -1,7 +1,7 @@
 ---
 // Define the array of projects directly in the frontmatter script.
 
-import {workProjects} from "../../data/workprojects";
+import {workProjects} from "../../data/en/workprojects";
 
 // Function to calculate `data-aos-duration` based on index
 function calculateAosDuration(index: number) {
@@ -9,18 +9,17 @@ function calculateAosDuration(index: number) {
 }
 ---
 
-<section class="bg-primary">
+<section class="bg-primary dark:bg-secondary">
   <div class="px-8 2xl:max-w-7xl mx-auto py-32">
     <div class="space-y-2">
-      <!-- Section Title and Decorative Elements -->
       <div
-          class="h-0.5 bg-secondary"
+          class="h-0.5 bg-secondary dark:bg-primary"
           data-aos="fade-up"
           data-aos-duration="1000"
       >
       </div>
       <h3
-          class="text-secondary text-base font-medium"
+          class="text-secondary dark:text-primary text-base font-medium"
           data-aos="fade-up"
           data-aos-duration="1500"
       >
@@ -30,7 +29,7 @@ function calculateAosDuration(index: number) {
     </div>
 
     <ul
-        class="mx-auto grid grid-cols-1 sm:grid-cols-2 text-secondary md:grid-cols-3 lg:grid-cols-4 items-start gap-6 mt-32"
+        class="mx-auto grid grid-cols-1 sm:grid-cols-2 text-secondary dark:text-primary md:grid-cols-3 lg:grid-cols-4 items-start gap-6 mt-32"
         role="list"
     >
       {
@@ -42,7 +41,7 @@ function calculateAosDuration(index: number) {
             >
               <div class="h-full flex flex-col justify-between">
                 <div>
-                  <p class="group-hover:text-secondary/70 text-secondary text-9xl font-black lg:rotate-90 xl:-translate-x-28 lg:-translate-x-16 lg:mb-8 xl:mb-0">
+                  <p class="group-hover:text-secondary dark:text-primary/70 text-secondary dark:text-primary text-9xl font-black lg:rotate-90 xl:-translate-x-28 lg:-translate-x-16 lg:mb-8 xl:mb-0">
                     0{index + 1}.
                   </p>
                   <p class="italic shrink-0">{project.title}</p>

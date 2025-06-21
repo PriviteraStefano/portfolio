@@ -6,6 +6,7 @@ module.exports = {
   theme: {
     extend: {
       animation: {
+        breathe: 'breathe 3s ease-in-out',
         marquee: 'marquee 25s linear infinite',
         marquee2: 'marquee2 25s linear infinite',
         fade: 'fadeIn .5s ease-in-out',
@@ -23,13 +24,22 @@ module.exports = {
           from: { opacity: 0 },
           to: { opacity: 1 },
         },
+        breathe: {
+          '0%': { 'font-variation-settings': '"wght" 100' },
+          '50%': { 'font-variation-settings': '"wght" 900'}
+          //'50%': { 'font-variation-settings': '"wght" 900' },
+        }
       },
       colors: {
-        secondary: "#0000ff",
-        primary: "#fafafa",
+        primary: "#FBECCF",
+        secondary: "#043922",
+
+        /*primary: "#E3FFF5",
+        secondary: "#06402B",*/
       },
       fontFamily: {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
+        //'variable': ['TheFont', 'sans-serif'],
       },
     },
   },

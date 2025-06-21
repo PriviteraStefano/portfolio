@@ -8,20 +8,20 @@ export const socials: Social[] = [
   {
     title: "Medium",
     url: "https://medium.com/@priviatwork",
-    icon: "hugeicons:medium",
+    icon: "lineicons:medium",
   },
   {
     title: "Github",
     url: "https://github.com/PriviteraStefano",
-    icon: "hugeicons:github",
+    icon: "lineicons:github",
   },
   {
     title: "Linkedin",
     url: "https://www.linkedin.com/in/stefano-salvatore-privitera-b4b080290/",
-    icon: "hugeicons:linkedin-02",
+    icon: "lineicons:linkedin",
   }, {
     title: "Mail",
     url: "mailto:priviatwork@gmail.com",
-    icon: "hugeicons:mail-02",
+    icon: "lineicons:envelope-1",
   },
 ]

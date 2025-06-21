@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 /* CSS */
 :root {
   font-family: Inter, sans-serif;
@@ -23,4 +24,33 @@
   :root {
     font-family: InterVariable, sans-serif;
   }
+}
+
+@font-face {
+  font-family: 'TheFont';
+  src: url("https://garet.typeforward.com/assets/fonts/shared/TFMixVF.woff2") format('woff2');
+  /* Or if using the remote URL: */
+  /* src: url("https://garet.typeforward.com/assets/fonts/shared/TFMixVF.woff2") format('woff2'); */
+}
+
+.container {
+  container-type: inline-size;
+  overflow: hidden;
+}
+
+.horizontal .child {
+  font-size: 24cqw;
+}
+
+#holographic {
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(
+          to right,
+          rgb(194, 255, 182),
+          rgb(255, 163, 182),
+          rgb(221, 169, 255),
+          rgb(162, 209, 255)
+  );
+  background-size: 200%;
 }

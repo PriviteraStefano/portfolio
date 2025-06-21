@@ -1,0 +1,13 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  return [
+    { params: { locale: 'en' } },
+    { params: { locale: 'it' } },
+  ];
+}
+---
+<BaseLayout>
+  <div class="font-bold">KMP Application</div>
+</BaseLayout>
