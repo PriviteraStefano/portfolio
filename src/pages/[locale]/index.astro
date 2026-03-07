@@ -4,21 +4,57 @@ import Hero from "../../components/landing/Hero.astro";
 import Projects from "../../components/landing/Projects.astro";
 import FeaturedWork from "../../components/landing/FeaturedWork.astro";
 import Intro from "../../components/landing/Intro.astro";
-import SimpleHolo from "../../components/card/SimpleHolo.astro";
-
 
 export async function getStaticPaths() {
-  return [
-    { params: { locale: 'en' } },
-    { params: { locale: 'it' } },
-  ];
+    return [{ params: { locale: "en" } }, { params: { locale: "it" } }];
 }
-
-
 ---
+
 <BaseLayout>
-  <Hero />
-  <Intro />
-  <Projects />
-  <FeaturedWork />
+    <div
+        id="snap-container"
+        class="h-screen overflow-y-scroll snap-y snap-mandatory"
+    >
+        <section class="snap-start h-screen overflow-hidden">
+            <Hero />
+        </section>
+        <section class="snap-start min-h-screen content-center">
+            <Intro />
+        </section>
+        <section class="snap-start min-h-screen">
+            <Projects />
+        </section>
+        <section class="snap-end">
+            <FeaturedWork />
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // @ts-ignore
+            AOS.init({
+                container: document.getElementById("snap-container"),
+                once: false,
+            });
+        });
+        document.addEventListener(
+            "scroll",
+            (event) => {
+                const aosAnimation = document.querySelectorAll("[data-aos]");
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.intersectionRatio > 0) {
+                            entry.target.classList.add("aos-animate");
+                        } else {
+                            entry.target.classList.remove("aos-animate");
+                        }
+                    });
+                });
+                aosAnimation.forEach((aosObject) => {
+                    observer.observe(aosObject);
+                });
+            },
+            { capture: true, passive: true },
+        );
+    </script>
 </BaseLayout>

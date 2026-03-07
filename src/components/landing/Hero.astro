@@ -1,134 +1,171 @@
 ---
+import { Icon } from "astro-icon/components";
 
-
-import {Icon} from "astro-icon/components";
-
-import {socials} from "../../data/en/social";
-import {techStack} from "../../data/en/techStack";
-import {getLangFromUrl, useTranslations} from "../../i18n/utils";
-import TextPressure from "../../react/components/TextPressure"
+import { socials } from "../../data/en/social";
+import { techStack } from "../../data/en/techStack";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import TextPressure from "../../react/components/TextPressure";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const name = t('name')
-const aboutMeTitle = t('about-me-title')
-const about = t('about')
-
+const name = t("name");
+const aboutMeTitle = t("about-me-title");
+const about = t("about");
 ---
-<section class="bg-primary dark:bg-secondary flex flex-col justify-around lg:h-screen">
-  <div
-      class="mx-auto pt-12 px-8 w-full"
-      data-aos="fade-up"
-      data-aos-duration="1000">
-    <TextPressure
-        text="Portofolio"
-        textColor={"#FBECCF"}
-        className="text-secondary dark:text-primary"
-        client:visible
-    />
-    <!--<h1
-        style="font-weight: 900"
-        class="child text-center font-variable text-secondary dark:text-primary animate-breathe">
-      Portfolio
-    </h1>-->
-  </div>
-  <div class="px-8 2xl:max-w-7xl w-full mx-auto pb-4">
-    <div class="mt-6 space-y-2">
-      <div
-          class="h-0.5 bg-secondary dark:bg-primary"
-          data-aos="fade-up"
-          data-aos-duration="1000">
-      </div>
-      <div
-          class="flex flex-col sm:flex-row gap-3 justify-between items-center"
-          data-aos="fade-up"
-          data-aos-duration="1500">
-        <div class="flex gap-2 items-center text-secondary dark:text-primary">
-          <p class="font-semibold">Full Stack Developer</p>
-          <p class="font-semibold">-</p>
-          <p class="font-semibold">IT Consultant</p>
-        </div>
-        <div class="w-full lg:w-fit">
-          <ul class="w-full items-center justify-evenly inline-flex gap-3 relative">
-            {socials.map((social) => (
-                <li>
-                  <a
-                      href={social.url}
-                      aria-label={social.title}
-                      class="text-secondary dark:text-primary hover:text-black duration-200"
-                      target="_blank"
-                      rel="noopener noref errer"
-                  >
-                    <Icon name={social.icon} class="hover:scale-150 fill-secondary text-secondary dark:text-primary"/>
-                  </a
-                  >
-                </li>
-            ))}
-          </ul>
-        </div>
 
-      </div>
-      <div
-          class="h-1.5  bg-secondary dark:bg-primary"
-          data-aos="fade-up"
-          data-aos-duration="2000">
-      </div>
-      <div class="h-3  bg-secondary dark:bg-primary" data-aos="fade-up" data-aos-duration="2500">
-      </div>
-      <div class="h-6  bg-secondary dark:bg-primary" data-aos="fade-up" data-aos-duration="3000">
-      </div>
-
-      <div
-          class="w-full mt-8 h-12 relative flex overflow-hidden border border-x-0 border-y-2 border-secondary py-2 group"
-          data-aos="fade-up"
-          data-aos-duration="3000"
-      >
-        <div
-            class="absolute left-0 inline-flex w-full animate-marquee whitespace-nowrap group-hover:[animation-play-state:paused]">
-          {techStack.map((tech) => (
-              <a href={tech.url} class="flex flex-row group/tech gap-2 mx-auto" aria-label={tech.title}>
-                <Icon name={tech.icon} class="text-secondary hover:scale-125 dark:text-primary w-6 h-6 "/>
-                <p class="w-0 scale-x-0 group-hover/tech:lg:inline group-hover/tech:lg:scale-x-100 ease-in-out duration-200 text-secondary dark:text-primary">{tech.title}</p>
-              </a>
-          ))}
-        </div>
-
-        <div
-            class="absolute right-0 w-full inline-flex animate-marquee2 whitespace-nowrap group-hover:[animation-play-state:paused]">
-          {techStack.map((tech) => (
-              <a href={tech.url} class="flex flex-row group/tech gap-2 mx-auto" aria-label={tech.title}>
-                <Icon name={tech.icon} class="text-secondary dark:text-primary w-6 h-6"/>
-                <p class="w-0 scale-x-0 group-hover/tech:lg:inline group-hover/tech:scale-x-100 ease-in-out duration-200 text-secondary dark:text-primary">{tech.title}</p>
-              </a>
-          ))}
-        </div>
-
-      </div>
-      <div
-          class="h-14  bg-secondary dark:bg-primary flex justify-end items-center p-4"
-          data-aos="fade-up"
-          data-aos-duration="3000"
-          data-aos-delay="150">
-        <p style="font-family: 'Cedarville Cursive',serif"
-           class="text-primary dark:text-secondary text-xs lg:text-base">
-          Privitera Stefano Salvatore
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="hidden px-8 h-full py-auto 2xl:max-w-7xl lg:grid grid-cols-3 grid-rows-1 justify-start items-center mx-auto">
+<section
+    class="bg-primary dark:bg-secondary flex flex-col justify-around h-full"
+>
     <div
-        class="text-base leading-relaxed "
+        class="mx-auto pt-12 px-8 w-full"
         data-aos="fade-up"
-        data-aos-duration="3000"
+        data-aos-duration="1000"
     >
-      <h2 class="text-2xl font-bold">
-        {aboutMeTitle}
-      </h2>
-      <p>{name}</p>
-      <br/>
-      <p>{about}</p>
+        <TextPressure text="Portofolio" client:visible />
     </div>
-  </div>
+    <div class="px-8 2xl:max-w-7xl w-full mx-auto pb-4">
+        <div class="mt-6 space-y-2">
+            <div
+                class="h-0.5 bg-secondary dark:bg-primary"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+            >
+            </div>
+            <div
+                class="flex flex-col sm:flex-row gap-3 justify-between items-center"
+                data-aos="fade-up"
+                data-aos-duration="1500"
+            >
+                <div
+                    class="flex gap-2 items-center text-secondary dark:text-primary"
+                >
+                    <p class="font-semibold">Full Stack Developer</p>
+                    <p class="font-semibold">-</p>
+                    <p class="font-semibold">IT Consultant</p>
+                </div>
+                <div class="w-full lg:w-fit">
+                    <ul
+                        class="w-full items-center justify-evenly inline-flex gap-3 relative"
+                    >
+                        {
+                            socials.map((social) => (
+                                <li>
+                                    <a
+                                        href={social.url}
+                                        aria-label={social.title}
+                                        class="text-secondary dark:text-primary hover:text-black duration-200"
+                                        target="_blank"
+                                        rel="noopener noref errer"
+                                    >
+                                        <Icon
+                                            name={social.icon}
+                                            class="hover:scale-150 transition-transform ease-linear fill-secondary text-secondary dark:text-primary"
+                                        />
+                                    </a>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="h-1.5 bg-secondary dark:bg-primary"
+                data-aos="fade-up"
+                data-aos-duration="2000"
+            >
+            </div>
+            <div
+                class="h-3 bg-secondary dark:bg-primary"
+                data-aos="fade-up"
+                data-aos-duration="2500"
+            >
+            </div>
+            <div
+                class="h-6 bg-secondary dark:bg-primary"
+                data-aos="fade-up"
+                data-aos-duration="3000"
+            >
+            </div>
+
+            <div
+                class="w-full mt-8 h-12 relative flex overflow-hidden border border-x-0 border-y-2 border-secondary py-2 group"
+                data-aos="fade-up"
+                data-aos-duration="3000"
+            >
+                <div
+                    class="absolute left-0 inline-flex w-full animate-marquee whitespace-nowrap group-hover:[animation-play-state:paused]"
+                >
+                    {
+                        techStack.map((tech) => (
+                            <a
+                                href={tech.url}
+                                class="flex flex-row group/tech gap-2 mx-auto"
+                                aria-label={tech.title}
+                            >
+                                <Icon
+                                    name={tech.icon}
+                                    class="text-secondary hover:scale-125 dark:text-primary w-6 h-6 "
+                                />
+                                <p class="w-0 scale-x-0 group-hover/tech:lg:inline group-hover/tech:lg:scale-x-100 ease-in-out duration-200 text-secondary dark:text-primary">
+                                    {tech.title}
+                                </p>
+                            </a>
+                        ))
+                    }
+                </div>
+
+                <div
+                    class="absolute right-0 w-full inline-flex animate-marquee2 whitespace-nowrap group-hover:[animation-play-state:paused]"
+                >
+                    {
+                        techStack.map((tech) => (
+                            <a
+                                href={tech.url}
+                                class="flex flex-row group/tech gap-2 mx-auto"
+                                aria-label={tech.title}
+                            >
+                                <Icon
+                                    name={tech.icon}
+                                    class="text-secondary dark:text-primary w-6 h-6"
+                                />
+                                <p class="w-0 scale-x-0 group-hover/tech:lg:inline group-hover/tech:scale-x-100 ease-in-out duration-200 text-secondary dark:text-primary">
+                                    {tech.title}
+                                </p>
+                            </a>
+                        ))
+                    }
+                </div>
+            </div>
+            <div
+                class="h-14 bg-secondary dark:bg-primary flex justify-end items-center p-4"
+                data-aos="fade-up"
+                data-aos-duration="3000"
+                data-aos-delay="150"
+            >
+                <p
+                    style="font-family: 'Cedarville Cursive',serif"
+                    class="text-primary dark:text-secondary text-xs lg:text-base"
+                >
+                    Privitera Stefano Salvatore
+                </p>
+            </div>
+        </div>
+    </div>
+    <div
+        class="hidden px-8 h-full py-auto 2xl:max-w-7xl lg:grid grid-cols-3 grid-rows-1 justify-start items-center mx-auto"
+    >
+        <div
+            class="text-base leading-relaxed"
+            data-aos="fade-up"
+            data-aos-duration="3000"
+        >
+            <h2 class="text-2xl font-bold">
+                {aboutMeTitle}
+            </h2>
+            <p>{name}</p>
+            <br />
+            <p>{about}</p>
+        </div>
+    </div>
 </section>

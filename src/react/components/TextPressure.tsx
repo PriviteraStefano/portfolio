@@ -190,9 +190,7 @@ const TextPressure: FC<TextPressureProps> = ({
 
 			<h1
 				ref={titleRef}
-				className={`text-pressure-title ${className} ${
-					flex ? "flex justify-between" : ""
-				} ${stroke ? "stroke" : ""} uppercase text-center`}
+				className={`text-secondary dark:text-primary text-pressure-title ${className} ${flex ? "flex justify-between" : ""} ${stroke ? "stroke" : ""} uppercase text-center`}
 				style={{
 					fontFamily,
 					fontSize: fontSize,
@@ -209,7 +207,7 @@ const TextPressure: FC<TextPressureProps> = ({
 						key={i}
 						ref={(el) => (spansRef.current[i] = el)}
 						data-char={char}
-						className="inline-block"
+						className="inline-block text-secondary dark:text-primary"
 					>
 						{char}
 					</span>

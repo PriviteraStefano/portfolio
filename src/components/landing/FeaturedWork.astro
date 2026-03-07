@@ -1,47 +1,62 @@
 ---
 // Define the features array directly in the Astro component
-const footer = "This portfolio is still a work in progress."
+const footer = "This portfolio is still a work in progress.";
 ---
 
-<section class="bg-primary dark:bg-secondary dark:bg-primary">
-  <div class="px-8 2xl:max-w-7xl mx-auto py-6">
-    <div class="mt-32 space-y-2">
-      <div
-        class="h-0.5 bg-secondary dark:bg-primary"
-        data-aos="fade-up"
-        data-aos-duration="1000">
-      </div>
-      <h3
-        class="text-secondary dark:text-primary text-xs font-medium"
-        data-aos="fade-up"
-        data-aos-duration="1500">
-        <span>Come</span>
-        <span class="font-bold">back</span>
-        <span class="italic">soon!</span>
-      </h3>
-      <div
-        class="h-1.5 bg-secondary dark:bg-primary"
-        data-aos="fade-up"
-        data-aos-duration="2000">
-      </div>
-      <div class="h-3 bg-secondary dark:bg-primary" data-aos="fade-up" data-aos-duration="2500">
-      </div>
-      <div class="h-6 bg-secondary dark:bg-primary" data-aos="fade-up" data-aos-duration="3000">
-      </div>
-      <div
-        class="h-12 bg-secondary dark:bg-primary"
-        data-aos="fade-up"
-        data-aos-duration="3000">
-      </div>
-      <div
-        class="h-24 bg-secondary dark:bg-primary"
-        data-aos="fade-up"
-        data-aos-duration="3000"
-        data-aos-delay="150">
-      </div>
+<section class="bg-primary dark:bg-secondary h-full w-full flex items-center">
+    <div class="px-8 2xl:max-w-7xl w-full mx-auto py-6">
+        <div class="mt-32 space-y-2">
+            <div
+                class="h-0.5 bg-secondary dark:bg-primary"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+            >
+            </div>
+            <h3
+                class="text-secondary dark:text-primary text-xs font-medium"
+                data-aos="fade-up"
+                data-aos-duration="1500"
+            >
+                <span>Come</span>
+                <span class="font-bold">back</span>
+                <span class="italic">soon!</span>
+            </h3>
+            <div
+                class="h-1.5 bg-secondary dark:bg-primary"
+                data-aos="fade-up"
+                data-aos-duration="2000"
+            >
+            </div>
+            <div
+                class="h-3 bg-secondary dark:bg-primary"
+                data-aos="fade-up"
+                data-aos-duration="2500"
+            >
+            </div>
+            <div
+                class="h-6 bg-secondary dark:bg-primary"
+                data-aos="fade-up"
+                data-aos-duration="3000"
+            >
+            </div>
+            <div
+                class="h-12 bg-secondary dark:bg-primary"
+                data-aos="fade-up"
+                data-aos-duration="3000"
+            >
+            </div>
+            <div
+                class="h-24 bg-secondary dark:bg-primary"
+                data-aos="fade-up"
+                data-aos-duration="3000"
+                data-aos-delay="150"
+            >
+            </div>
+        </div>
+        <div
+            class="mx-auto flex flex-col lg:flex-row text-left gap-3 items-start text-secondary dark:text-primary mt-3"
+        >
+            <p class="italic shrink-0 text-xs">{footer}</p>
+        </div>
     </div>
-    <div class="mx-auto flex flex-col lg:flex-row text-left gap-3 items-start text-secondary dark:text-primary mt-3">
-      <p class="italic shrink-0 text-xs ">{footer}</p>
-    </div>
-  </div>
 </section>
