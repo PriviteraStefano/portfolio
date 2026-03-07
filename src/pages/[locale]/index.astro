@@ -34,7 +34,7 @@ export async function getStaticPaths() {
             // @ts-ignore
             AOS.init({
                 container: document.getElementById("snap-container"),
-                once: false,
+                once: true,
             });
         });
         document.addEventListener(
