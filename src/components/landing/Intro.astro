@@ -15,49 +15,61 @@ const experienceTitle = t("experience-title");
 const experience = t("experience");
 ---
 
-<section class="bg-primary dark:bg-secondary h-full flex items-center">
-    <div class="px-8 2xl:max-w-7xl mx-auto py-6">
-        <div
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-3 text-secondary dark:text-primary gap-6"
-        >
-            <div
-                class="text-base lg:col-start-1 leading-relaxed"
-                data-aos="fade-up"
-                data-aos-duration="2000"
-            >
-                <h2 class="text-2xl font-bold">
-                    {aboutMeTitle}
-                </h2>
-                <p>{name}</p>
-                <br />
-                <p>{about}</p>
-            </div>
-            <div
-                class="text-base lg:col-start-1 lg:row-start-3 leading-relaxed"
-                data-aos="fade-up"
-                data-aos-duration="2200"
-            >
-                <h2 class="text-2xl font-bold">
-                    {focusTitle}
-                </h2>
-                <p>{focus}</p>
-            </div>
-            <div
-                class="text-base lg:row-start-2 lg:col-start-2 leading-relaxed"
-                data-aos="fade-up"
-                data-aos-duration="2000"
-            >
-                <h2 class="text-2xl font-bold">{workTitle}</h2>
-                <p>{work}</p>
-            </div>
-            <div
-                class="text-base lg:col-start-3 lg:row-start-3 leading-relaxed"
-                data-aos="fade-up"
-                data-aos-duration="2500"
-            >
-                <h2 class="text-2xl font-bold">{experienceTitle}</h2>
-                <p>{experience}</p>
-            </div>
-        </div>
+<section
+    class="bg-primary dark:bg-secondary h-full flex items-center px-8 2xl:max-w-7xl mx-auto py-6 flex-col justify-around gap-12 md:grid md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-3 md:gap-6"
+>
+    <div class="space-y-2 w-full col-span-full">
+      <div
+          class="h-0.5 bg-secondary dark:bg-primary"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+      >
+      </div>
+      <h3
+          class="text-secondary dark:text-primary text-base font-medium"
+          data-aos="fade-up"
+          data-aos-duration="1500"
+      >
+        <span>Intro</span>
+        <span class="font-bold"></span>
+      </h3>
+    </div>
+    <div
+        class="block md:hidden text-base lg:col-start-1 leading-relaxed"
+        data-aos="fade-up"
+        data-aos-duration="2000"
+    >
+        <h2 class="text-2xl font-bold">
+            {aboutMeTitle}
+        </h2>
+        <p>{name}</p>
+        <br />
+        <p>{about}</p>
+    </div>
+    <div
+        class="text-base lg:col-start-1 lg:row-start-3 leading-relaxed"
+        data-aos="fade-up"
+        data-aos-duration="2200"
+    >
+        <h2 class="text-2xl font-bold">
+            {focusTitle}
+        </h2>
+        <p>{focus}</p>
+    </div>
+    <div
+        class="text-base lg:row-start-2 lg:col-start-2 leading-relaxed"
+        data-aos="fade-up"
+        data-aos-duration="2000"
+    >
+        <h2 class="text-2xl font-bold">{workTitle}</h2>
+        <p>{work}</p>
+    </div>
+    <div
+        class="text-base lg:col-start-3 lg:row-start-3 leading-relaxed"
+        data-aos="fade-up"
+        data-aos-duration="2500"
+    >
+        <h2 class="text-2xl font-bold">{experienceTitle}</h2>
+        <p>{experience}</p>
     </div>
 </section>
