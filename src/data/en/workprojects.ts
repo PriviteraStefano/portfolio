@@ -1,39 +1,38 @@
 export interface Project {
-  title: string,
-  description: string,
-  url: string
+  title: string;
+  description: string;
+  url: string;
 }
 
-const gnMobile : Project = {
+const gnMobile: Project = {
   title: "KMP Application",
-  description: "Engineered and developed a multi-module Kotlin Multiplatform application and core library. Used by " +
-    "different customers to improve their warehouse efficiency with a focus on compatibility with industry standard ERPs " +
-    "such as Oracle JDE and NetSuite.",
-  url: "/projects/kmp-application"
-}
+  description:
+    "Built a multi-module Kotlin Multiplatform app and core library used by warehouse clients. " +
+    "Focused on compatibility with ERPs like Oracle JDE and NetSuite.",
+  url: "/projects/kmp-application",
+};
 
-const arisIntegrations : Project = {
+const arisIntegrations: Project = {
   title: "Integrations with Golang",
-  description: "Created data import/export scripts in Go, streamlining data management and data integration processes" +
-    "between different systems/services like ARIS and SAP Success Factory.",
-  url: "/projects/aris-integrations"
-}
+  description:
+    "Wrote data import/export scripts in Go to move data between systems like ARIS and SAP Success Factory. " +
+    "Mostly unglamorous work, but it made a real difference to how reliably data flowed between services.",
+  url: "/projects/aris-integrations",
+};
 
-const oneDB : Project = {
+const oneDB: Project = {
   title: "Business React Application",
-  description: "Revamped the frontend of a legacy web application for centralized database management using React " +
-    "and TypeScript, enabling the integration of data from various sources. This redesign introduced new functionalities" +
-    " that enhanced user experience and allowed for easier editing of product data through the backend APIs.",
-  url: "/projects/react-application"
-}
+  description:
+    "Rebuilt the frontend of a legacy database management tool in React and TypeScript. " +
+    "Added support for multiple data sources and made editing product data through the backend APIs actually usable.",
+  url: "/projects/react-application",
+};
 
-const landingPages : Project = {
-  title: "Landing pages and documentations",
-  description: "Designed engaging landing pages and comprehensive project documentation using Astro. " +
-    "This site was also created with it!",
-  url: "/projects/landing-pages"
-}
+const landingPages: Project = {
+  title: "Landing pages and documentation",
+  description:
+    "Built landing pages and project documentation with Astro. This site is one of them.",
+  url: "/projects/landing-pages",
+};
 
-export const workProjects = [
-  gnMobile, arisIntegrations, oneDB, landingPages
-]
+export const workProjects = [gnMobile, arisIntegrations, oneDB, landingPages];

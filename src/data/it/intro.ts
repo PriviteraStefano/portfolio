@@ -1,16 +1,13 @@
-export const nome: string = "Ciao, sono Stefano Salvatore Privitera.";
+export const name: string = "Ciao, sono Stefano Salvatore Privitera.";
 
-export const riguardo: string =
-  "Sono uno sviluppatore software con una laurea in Informatica presso l'Università di Milano-Bicocca, attualmente " +
-  "iscritto alla laurea magistrale.";
+export const about: string =
+  "Sviluppatore software con una laurea triennale in Informatica presso Milano-Bicocca e con più di due anni di esperienza professionale.";
 
-export const lavoro: string =
-  "Lavoro come IT Consultant e Software Developer presso GN Techonomy, dove contribuisco al team di sviluppo tecnico.";
+export const work: string =
+  "Lavoro come IT Consultant presso GN Techonomy, dove costruisco cose e ogni tanto le rompo prima.";
 
-export const esperienza: string =
-  "Grazie al mio lavoro, ai progetti personali e universitari, ho conoscenze in vari ambiti dell'IT, tra cui" +
-  " sviluppo nativo, front-end, back-end e integrazione.";
+export const experience: string =
+  "I miei progetti spaziano tra mobile, web, backend e integrazioni — abbastanza varietà da imparare qualcosa di utile da ognuno.";
 
-export const passione: string =
-  "Come sviluppatore, sono appassionato di clean code e system design. Mi tengo aggiornato con le nuove " +
-  "tecnologie e altri modi per migliorare le mie creazioni.";
+export const focus: string =
+  "Tengo molto al clean code e al system design. Non in modo dogmatico, solo nel senso che il me del futuro o chi per lui me ne sarà grato.";

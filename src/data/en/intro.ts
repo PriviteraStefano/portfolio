@@ -1,17 +1,13 @@
 export const name: string = "Hi, I'm Stefano Salvatore Privitera.";
 
 export const about: string =
-  "I am a software developer with a BCompSc from the university of Milano-Bicocca, currently " +
-  "attending my Master's Degree";
+  "Software developer with a BCompSc from Milano-Bicocca and more than two years of professional experience.";
 
 export const work: string =
-  "I currently work as an IT Consultant at GN Techonomy, where I contribute to the technical development team.";
+  "I work as an IT Consultant and Software Developer at GN Techonomy, where I build things and occasionally break them first.";
 
 export const experience: string =
-  "Thanks to my work, personal, and university projects, I have knowledge in various aspects of IT, including" +
-  " native, front-end, back-end, and integration.";
+  "My projects span mobile, web, backend, and integrations — enough variety that I've learned something useful from each one.";
 
 export const focus: string =
-  "As a developer I'm passionate about clean code and system design. I keep myself up-to-date with new technologies " +
-  "and other ways to improve my creations.";
-
+  "I care a lot about clean code and system design. Not in a dogmatic way, just in a 'future me will be grateful' way.";

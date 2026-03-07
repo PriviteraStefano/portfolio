@@ -41,13 +41,8 @@ export const techStack: Language[] = [
     icon: "devicon-plain:android",
   },
   {
-    title: "Flutter",
-    url: "https://flutter.dev/",
-    icon: "devicon-plain:flutter",
-  },
-  {
     title: "Astro",
     url: "https://astro.build/",
     icon: "devicon-plain:astro",
-  }
-]
+  },
+];
