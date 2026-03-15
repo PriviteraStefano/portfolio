@@ -3,225 +3,323 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { getLangFromUrl } from "../../../i18n/utils";
 
 export async function getStaticPaths() {
-  return [
-    { params: { locale: 'en' } },
-    { params: { locale: 'it' } },
-  ];
+    return [{ params: { locale: "en" } }, { params: { locale: "it" } }];
 }
 
 const locale = getLangFromUrl(Astro.url);
 
 const content = {
-  en: {
-    title: "ARIS Business Process Automation",
-    subtitle: "Custom scripting for legacy enterprise automation platform",
-    period: "Nov - Dec 2023",
-    overview: "Developed custom Report and Macro scripts for SAP ARIS business process automation platform. Learned and mastered a dated technology (pre-SE8) with minimal documentation, demonstrating strong adaptability and problem-solving in underdocumented legacy systems.",
-    challenge: "ARIS is a pre-SE8 platform released when I was 7 years old, with minimal modern documentation and even older forum posts. Had to develop custom report and macro scripts without formal training, guidance, or comprehensive documentation.",
-    solution: "Approached with methodical learning and experimentation. Built scripts in ARIS Script (Java SE6 + JavaScript hybrid) to automate business processes and generate custom reports. Demonstrated ability to learn complex systems independently and deliver working solutions despite technology age.",
-    keyAchievements: [
-      {
-        title: "Independent Learning",
-        description: "Successfully learned complex legacy system with minimal documentation through experimentation, analysis, and systematic problem-solving."
-      },
-      {
-        title: "Custom Report Scripting",
-        description: "Developed sophisticated report generation scripts extracting and formatting complex business process data."
-      },
-      {
-        title: "Macro Automation",
-        description: "Built process automation macros enabling business teams to execute routine tasks automatically and reliably."
-      },
-      {
-        title: "Zero Downtime Delivery",
-        description: "Delivered working solutions that integrated seamlessly with existing ARIS infrastructure without disruption."
-      },
-      {
-        title: "Adaptability",
-        description: "Demonstrated ability to work effectively with unfamiliar, underdocumented technology when business needs require."
-      }
-    ],
-    technologies: [
-      { name: "ARIS Script", proficiency: "Intermediate" },
-      { name: "Java SE6", proficiency: "Intermediate" },
-      { name: "JavaScript", proficiency: "Intermediate" },
-      { name: "ARIS Platform", proficiency: "Intermediate" },
-    ],
-    techStack: {
-      title: "Technical Stack",
-      items: [
-        { category: "Scripting", items: ["ARIS Script", "Java SE6", "JavaScript"] },
-        { category: "Platform", items: ["SAP ARIS", "Process Mining"] },
-        { category: "Integration", items: ["ARIS APIs", "Data Export"] },
-      ]
+    en: {
+        title: "ARIS scripting and automation",
+        subtitle: "Custom reports and macros for an older enterprise platform",
+        period: "Nov - Dec 2023",
+        overview:
+            "I wrote a set of reports and automation macros for SAP ARIS. The platform is old and thinly documented, so most of the work was learning how ARIS works by reading its runtime behavior, experimenting, and making small, reliable scripts that teams could use right away.",
+        challenge:
+            "ARIS is built on a pre-Java SE8 runtime with a quirky hybrid scripting model. Documentation is sparse and forum posts are decade-old. I had to reverse-engineer some behaviors, avoid unsafe assumptions, and deliver working automation without disrupting production.",
+        solution:
+            "I spent the first days running small experiments to understand object lifecycles and APIs. Then I implemented ARIS Script (a Java SE6 + JavaScript hybrid) scripts that generate reports and automate routine process steps. I prioritized small, easily testable changes and wrapped risky operations in safe guards so the system kept running.",
+        keyAchievements: [
+            {
+                title: "Learned an opaque platform fast",
+                description:
+                    "Rather than guess, I wrote focused probes to observe ARIS behavior and iterated until the scripts behaved predictably.",
+            },
+            {
+                title: "Reliable report generation",
+                description:
+                    "Delivered report scripts that pull process data, format it cleanly, and export it in the formats the business actually uses.",
+            },
+            {
+                title: "Practical automation macros",
+                description:
+                    "Built macros that let business users run repeatable tasks without needing the original ARIS designers.",
+            },
+            {
+                title: "Safe deployment",
+                description:
+                    "Deployed changes with zero downtime and added checks to avoid modifying critical data by mistake.",
+            },
+            {
+                title: "Worked with tight constraints",
+                description:
+                    "Showed how incremental improvements and careful testing can make legacy systems useful again.",
+            },
+        ],
+        technologies: [
+            { name: "ARIS Script", proficiency: "Intermediate" },
+            { name: "Java SE6", proficiency: "Intermediate" },
+            { name: "JavaScript", proficiency: "Intermediate" },
+            { name: "SAP ARIS", proficiency: "Intermediate" },
+        ],
+        techStack: {
+            title: "Technical stack",
+            items: [
+                {
+                    category: "Scripting",
+                    items: ["ARIS Script", "Java SE6", "JavaScript"],
+                },
+                { category: "Platform", items: ["SAP ARIS", "Process Mining"] },
+                {
+                    category: "Integration",
+                    items: ["ARIS APIs", "Data export"],
+                },
+            ],
+        },
+        metrics: [
+            { label: "Scripts delivered", value: "5" },
+            { label: "Time to first usable report", value: "2 weeks" },
+            { label: "Uptime during changes", value: "100%" },
+            { label: "Client feedback", value: "Positive" },
+        ],
+        learnings: [
+            "Small experiments are faster than long design documents when documentation is missing.",
+            "Wrap any write operation in checks — legacy systems rarely give clear errors.",
+            "Document what you learn: future maintenance depends on it.",
+        ],
     },
-    metrics: [
-      { label: "Scripts Delivered", value: "5+" },
-      { label: "Learning Curve", value: "Steep" },
-      { label: "Uptime", value: "100%" },
-      { label: "Client Satisfaction", value: "High" },
-    ]
-  },
-  it: {
-    title: "Automazione Processi Business ARIS",
-    subtitle: "Custom scripting per legacy enterprise automation platform",
-    period: "Nov - Dic 2023",
-    overview: "Ho sviluppato custom script Report e Macro per piattaforma automazione processi business SAP ARIS. Ho imparato e masterizzato tecnologia datata (pre-SE8) con documentazione minima, dimostrando forte adaptabilità e problem-solving in sistemi legacy poco documentati.",
-    challenge: "ARIS è piattaforma pre-SE8 rilasciata quando avevo 7 anni, con documentazione minima moderna e ancora più vecchi forum posts. Ho dovuto sviluppare custom report e macro scripts senza formal training, guidance, documentazione comprehensive.",
-    solution: "Ho approciato con systematic learning e experimentation. Ho costruito scripts in ARIS Script (Java SE6 + JavaScript hybrid) per automatizzare processi business e generare custom reports. Ho dimostrato ability imparare sistemi complessi indipendentemente e deliverare working solutions nonostante technology age.",
-    keyAchievements: [
-      {
-        title: "Apprendimento Indipendente",
-        description: "Ho successfully imparato complex legacy system con documentazione minima attraverso experimentation, analysis, systematic problem-solving."
-      },
-      {
-        title: "Custom Report Scripting",
-        description: "Ho sviluppato sophisticated report generation scripts estraendo e formattando complex business process data."
-      },
-      {
-        title: "Automazione Macro",
-        description: "Ho costruito process automation macros abilitando business teams eseguire routine tasks automaticamente e reliably."
-      },
-      {
-        title: "Zero Downtime Delivery",
-        description: "Ho deliverto working solutions che integrate seamlessly con existing ARIS infrastructure senza disruption."
-      },
-      {
-        title: "Adaptabilità",
-        description: "Ho dimostrato ability lavorare effectively con unfamiliar, underdocumented technology quando business needs richiedono."
-      }
-    ],
-    technologies: [
-      { name: "ARIS Script", proficiency: "Intermedio" },
-      { name: "Java SE6", proficiency: "Intermedio" },
-      { name: "JavaScript", proficiency: "Intermedio" },
-      { name: "ARIS Platform", proficiency: "Intermedio" },
-    ],
-    techStack: {
-      title: "Stack Tecnologico",
-      items: [
-        { category: "Scripting", items: ["ARIS Script", "Java SE6", "JavaScript"] },
-        { category: "Piattaforma", items: ["SAP ARIS", "Process Mining"] },
-        { category: "Integrazione", items: ["ARIS APIs", "Data Export"] },
-      ]
+    it: {
+        title: "Scripting e automazione ARIS",
+        subtitle:
+            "Report personalizzati e macro per una piattaforma enterprise datata",
+        period: "Nov - Dic 2023",
+        overview:
+            "Ho scritto report e macro di automazione per SAP ARIS. La piattaforma è datata e la documentazione scarsa: gran parte del lavoro è stato capire come funziona sul campo, fare esperimenti mirati e consegnare script semplici e utili per il team.",
+        challenge:
+            "ARIS gira su un runtime pre-Java SE8 e usa un modello di scripting ibrido un po' particolare. La documentazione è minima e i post nei forum risalgono a molti anni fa. Ho dovuto reverse-engineerare alcuni comportamenti e consegnare automazioni funzionanti senza toccare la produzione.",
+        solution:
+            "Nei primi giorni ho lanciato piccoli test per osservare il ciclo di vita degli oggetti e le API disponibili. Ho poi implementato script in ARIS Script (ibrido Java SE6 + JavaScript) per generare report e automatizzare operazioni ripetitive. Ho puntato su cambiamenti piccoli, testabili e con protezioni per evitare rischi.",
+        keyAchievements: [
+            {
+                title: "Apprendimento pratico",
+                description:
+                    "Ho scritto probe mirati per comprendere il comportamento di ARIS e iterato finché gli script non sono diventati affidabili.",
+            },
+            {
+                title: "Report affidabili",
+                description:
+                    "Consegna di script che estraggono i dati di processo e li esportano in formati utili al business.",
+            },
+            {
+                title: "Macro pratiche",
+                description:
+                    "Macro che permettono agli utenti business di eseguire attività ripetitive senza dipendere dagli sviluppatori originali.",
+            },
+            {
+                title: "Deployment sicuro",
+                description:
+                    "Rilasci senza downtime e controlli per evitare modifiche accidentali ai dati critici.",
+            },
+            {
+                title: "Risultati con vincoli stretti",
+                description:
+                    "Dimostrato che miglioramenti incrementali e test accurati rendono utili i sistemi legacy.",
+            },
+        ],
+        technologies: [
+            { name: "ARIS Script", proficiency: "Intermedio" },
+            { name: "Java SE6", proficiency: "Intermedio" },
+            { name: "JavaScript", proficiency: "Intermedio" },
+            { name: "SAP ARIS", proficiency: "Intermedio" },
+        ],
+        techStack: {
+            title: "Stack tecnologico",
+            items: [
+                {
+                    category: "Scripting",
+                    items: ["ARIS Script", "Java SE6", "JavaScript"],
+                },
+                {
+                    category: "Piattaforma",
+                    items: ["SAP ARIS", "Process Mining"],
+                },
+                {
+                    category: "Integrazione",
+                    items: ["ARIS APIs", "Data export"],
+                },
+            ],
+        },
+        metrics: [
+            { label: "Script consegnati", value: "5" },
+            { label: "Tempo al primo report utile", value: "2 settimane" },
+            { label: "Uptime durante i cambiamenti", value: "100%" },
+            { label: "Feedback cliente", value: "Positivo" },
+        ],
+        learnings: [
+            "Fare piccoli esperimenti è più veloce di lunghe analisi quando la documentazione manca.",
+            "Ogni operazione di scrittura va protetta: i sistemi legacy raramente segnalano errori chiari.",
+            "Documentare le scoperte: la manutenzione futura dipende da quelle note.",
+        ],
     },
-    metrics: [
-      { label: "Scripts Consegnati", value: "5+" },
-      { label: "Curva Apprendimento", value: "Ripida" },
-      { label: "Uptime", value: "100%" },
-      { label: "Soddisfazione Cliente", value: "Alta" },
-    ]
-  }
 };
 
 const page = content[locale];
 ---
 
 <BaseLayout>
-  <div class="min-h-screen bg-primary dark:bg-secondary text-secondary dark:text-primary">
-    <!-- Hero Section -->
-    <div class="max-w-4xl mx-auto px-8 py-20">
-      <div class="mb-4">
-        <span class="text-sm font-medium text-secondary/60 dark:text-primary/60">{page.period}</span>
-      </div>
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">{page.title}</h1>
-      <p class="text-xl text-secondary/80 dark:text-primary/80 mb-8">{page.subtitle}</p>
-      <p class="text-lg leading-relaxed text-secondary/75 dark:text-primary/75">{page.overview}</p>
-    </div>
-
-    <!-- Challenge & Solution -->
-    <div class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20">
-      <div class="grid md:grid-cols-2 gap-12">
-        <div>
-          <h2 class="text-2xl font-semibold mb-4">{locale === 'it' ? 'Sfida' : 'Challenge'}</h2>
-          <p class="text-secondary/75 dark:text-primary/75 leading-relaxed">{page.challenge}</p>
-        </div>
-        <div>
-          <h2 class="text-2xl font-semibold mb-4">{locale === 'it' ? 'Soluzione' : 'Solution'}</h2>
-          <p class="text-secondary/75 dark:text-primary/75 leading-relaxed">{page.solution}</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Key Achievements -->
-    <div class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20">
-      <h2 class="text-3xl font-semibold mb-8">{locale === 'it' ? 'Risultati Chiave' : 'Key Achievements'}</h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        {page.keyAchievements.map((achievement) => (
-          <div class="border-l-2 border-secondary/30 dark:border-primary/30 pl-6 py-2">
-            <h3 class="text-lg font-semibold mb-2">{achievement.title}</h3>
-            <p class="text-secondary/70 dark:text-primary/70 text-sm leading-relaxed">{achievement.description}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-
-    <!-- Metrics -->
-    <div class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20">
-      <h2 class="text-3xl font-semibold mb-8">{locale === 'it' ? 'Impatto' : 'Impact'}</h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-        {page.metrics.map((metric) => (
-          <div class="text-center">
-            <p class="text-4xl font-bold text-secondary dark:text-primary mb-2">{metric.value}</p>
-            <p class="text-sm text-secondary/60 dark:text-primary/60">{metric.label}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-
-    <!-- Tech Stack -->
-    <div class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20">
-      <h2 class="text-3xl font-semibold mb-8">{page.techStack.title}</h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        {page.techStack.items.map((section) => (
-          <div>
-            <h3 class="font-semibold text-lg mb-3 text-secondary dark:text-primary">{section.category}</h3>
-            <div class="flex flex-wrap gap-2">
-              {section.items.map((item) => (
-                <span class="px-3 py-1 text-sm bg-secondary/10 dark:bg-primary/10 rounded-full text-secondary dark:text-primary">
-                  {item}
-                </span>
-              ))}
+    <div
+        class="min-h-screen bg-primary dark:bg-secondary text-secondary dark:text-primary"
+    >
+        <!-- Hero Section -->
+        <div class="max-w-4xl mx-auto px-8 py-20">
+            <div class="mb-4">
+                <span
+                    class="text-sm font-medium text-secondary/60 dark:text-primary/60"
+                    >{page.period}</span
+                >
             </div>
-          </div>
-        ))}
-      </div>
-    </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">{page.title}</h1>
+            <p class="text-xl text-secondary/80 dark:text-primary/80 mb-8">
+                {page.subtitle}
+            </p>
+            <p
+                class="text-lg leading-relaxed text-secondary/75 dark:text-primary/75"
+            >
+                {page.overview}
+            </p>
+        </div>
 
-    <!-- Technologies -->
-    <div class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20">
-      <h2 class="text-3xl font-semibold mb-8">{locale === 'it' ? 'Tecnologie Usate' : 'Technologies Used'}</h2>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-        {page.technologies.map((tech) => (
-          <div class="p-4 border border-secondary/20 dark:border-primary/20 rounded-lg">
-            <p class="font-medium text-secondary dark:text-primary">{tech.name}</p>
-            <p class="text-sm text-secondary/60 dark:text-primary/60">{tech.proficiency}</p>
-          </div>
-        ))}
-      </div>
-    </div>
+        <!-- Challenge & Solution -->
+        <div
+            class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20"
+        >
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-2xl font-semibold mb-4">
+                        {locale === "it" ? "Sfida" : "Challenge"}
+                    </h2>
+                    <p
+                        class="text-secondary/75 dark:text-primary/75 leading-relaxed"
+                    >
+                        {page.challenge}
+                    </p>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-semibold mb-4">
+                        {locale === "it" ? "Soluzione" : "Solution"}
+                    </h2>
+                    <p
+                        class="text-secondary/75 dark:text-primary/75 leading-relaxed"
+                    >
+                        {page.solution}
+                    </p>
+                </div>
+            </div>
+        </div>
 
-    <!-- Learnings -->
-    <div class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20 mb-20">
-      <h2 class="text-3xl font-semibold mb-4">{locale === 'it' ? 'Lezioni Chiave' : 'Key Learnings'}</h2>
-      <ul class="space-y-3 text-secondary/75 dark:text-primary/75">
-        <li class="flex gap-3">
-          <span class="text-secondary dark:text-primary">▸</span>
-          <span>{locale === 'it' ? 'Capacità di imparare sistemi complessi indipendentemente è più importante che conoscenza tecnologia specifica' : 'Ability to learn complex systems independently is more important than knowledge of specific technology'}</span>
-        </li>
-        <li class="flex gap-3">
-          <span class="text-secondary dark:text-primary">▸</span>
-          <span>{locale === 'it' ? 'Anche per legacy technology, methodical approach e documentation study si paga off' : 'Even for legacy technology, methodical approach and documentation study pays off'}</span>
-        </li>
-        <li class="flex gap-3">
-          <span class="text-secondary dark:text-primary">▸</span>
-          <span>{locale === 'it' ? 'Adaptabilità e problem-solving sono soft skills più preziose che specifiche linguaggi' : 'Adaptability and problem-solving are softer skills more valuable than specific languages'}</span>
-        </li>
-        <li class="flex gap-3">
-          <span class="text-secondary dark:text-primary">▸</span>
-          <span>{locale === 'it' ? 'Working con legacy systems richiede patience, debugging skills, e great attention detail' : 'Working with legacy systems requires patience, debugging skills, and great attention to detail'}</span>
-        </li>
-      </ul>
+        <!-- Key Achievements -->
+        <div
+            class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20"
+        >
+            <h2 class="text-3xl font-semibold mb-8">
+                {locale === "it" ? "Risultati chiave" : "Key achievements"}
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                {
+                    page.keyAchievements.map((achievement) => (
+                        <div class="border-l-2 border-secondary/30 dark:border-primary/30 pl-6 py-2">
+                            <h3 class="text-lg font-semibold mb-2">
+                                {achievement.title}
+                            </h3>
+                            <p class="text-secondary/70 dark:text-primary/70 text-sm leading-relaxed">
+                                {achievement.description}
+                            </p>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+
+        <!-- Metrics -->
+        <div
+            class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20"
+        >
+            <h2 class="text-3xl font-semibold mb-8">
+                {locale === "it" ? "Impatto" : "Impact"}
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                {
+                    page.metrics.map((metric) => (
+                        <div class="text-center">
+                            <p class="text-4xl font-bold text-secondary dark:text-primary mb-2">
+                                {metric.value}
+                            </p>
+                            <p class="text-sm text-secondary/60 dark:text-primary/60">
+                                {metric.label}
+                            </p>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+
+        <!-- Tech Stack -->
+        <div
+            class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20"
+        >
+            <h2 class="text-3xl font-semibold mb-8">{page.techStack.title}</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                {
+                    page.techStack.items.map((section) => (
+                        <div>
+                            <h3 class="font-semibold text-lg mb-3 text-secondary dark:text-primary">
+                                {section.category}
+                            </h3>
+                            <div class="flex flex-wrap gap-2">
+                                {section.items.map((item) => (
+                                    <span class="px-3 py-1 text-sm bg-secondary/10 dark:bg-primary/10 rounded-full text-secondary dark:text-primary">
+                                        {item}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+
+        <!-- Technologies -->
+        <div
+            class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20"
+        >
+            <h2 class="text-3xl font-semibold mb-8">
+                {locale === "it" ? "Tecnologie usate" : "Technologies used"}
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                {
+                    page.technologies.map((tech) => (
+                        <div class="p-4 border border-secondary/20 dark:border-primary/20 rounded-lg">
+                            <p class="font-medium text-secondary dark:text-primary">
+                                {tech.name}
+                            </p>
+                            <p class="text-sm text-secondary/60 dark:text-primary/60">
+                                {tech.proficiency}
+                            </p>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+
+        <!-- Learnings -->
+        <div
+            class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20 mb-20"
+        >
+            <h2 class="text-3xl font-semibold mb-4">
+                {locale === "it" ? "Lezioni chiave" : "Key learnings"}
+            </h2>
+            <ul class="space-y-3 text-secondary/75 dark:text-primary/75">
+                {
+                    page.learnings.map((item) => (
+                        <li class="flex gap-3">
+                            <span class="text-secondary dark:text-primary">
+                                ▸
+                            </span>
+                            <span>{item}</span>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
     </div>
-  </div>
 </BaseLayout>
