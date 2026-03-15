@@ -98,7 +98,7 @@ const learnMore = locale === "it" ? "Scopri di più" : "Learn more";
                             {project.url && (
                                 <div class="mt-4 pt-4 border-t border-secondary dark:border-primary border-opacity-20">
                                     <a
-                                        href={`${project.url}`}
+                                        href={project.url}
                                         class="inline-flex items-center text-sm font-medium text-secondary dark:text-primary hover:opacity-70 transition-opacity"
                                     >
                                         {learnMore} &nbsp; ↗

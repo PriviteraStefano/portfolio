@@ -1,0 +1,172 @@
+{
+  "$ref": "#/definitions/projects",
+  "definitions": {
+    "projects": {
+      "type": "object",
+      "properties": {
+        "slug": {
+          "type": "string",
+          "description": "URL slug for the project (e.g. 'aris-scripting')",
+          "markdownDescription": "URL slug for the project (e.g. 'aris-scripting')"
+        },
+        "locale": {
+          "type": "string",
+          "description": "Locale code, e.g. 'en' or 'it'",
+          "markdownDescription": "Locale code, e.g. 'en' or 'it'"
+        },
+        "title": {
+          "type": "string"
+        },
+        "subtitle": {
+          "type": "string"
+        },
+        "period": {
+          "type": "string"
+        },
+        "overview": {
+          "type": "string"
+        },
+        "challenge": {
+          "type": "string"
+        },
+        "solution": {
+          "type": "string"
+        },
+        "keyAchievements": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "title",
+              "description"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "technologies": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "proficiency": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "techStack": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "category": {
+                    "type": "string"
+                  },
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": [
+                  "category",
+                  "items"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        "metrics": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "label",
+              "value"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "learnings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "hero_image": {
+          "type": "string",
+          "description": "Path to a hero image (public/...)",
+          "markdownDescription": "Path to a hero image (public/...)"
+        },
+        "gallery": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Array of image paths",
+          "markdownDescription": "Array of image paths"
+        },
+        "testimonial": {
+          "type": "object",
+          "properties": {
+            "quote": {
+              "type": "string"
+            },
+            "author": {
+              "type": "string"
+            },
+            "role": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "quote",
+            "author"
+          ],
+          "additionalProperties": false
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "slug",
+        "title"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

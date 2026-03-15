@@ -1,0 +1,72 @@
+{
+  "slug": "backend-modernization",
+  "locale": "en",
+  "title": "Mobile backend modernization",
+  "subtitle": "Kotlin + Spring Boot rewrite using hexagonal architecture",
+  "period": "Oct - Dec 2024",
+  "overview": "I rewrote the backend for a long-lived KMP mobile app, moving from Java + MyBatis to Kotlin + Spring Boot. The goal was practical: make the code easier to change, safer to run, and faster to reason about. The rewrite reduced boilerplate and improved day-to-day developer ergonomics.",
+  "challenge": "The old backend carried a decade of patches: business logic mixed in MyBatis mappers, different database dialects, and fragile upgrade paths. Small changes could ripple across systems. Shipping reliable fixes took too long.",
+  "solution": "I rewrote the service in Kotlin with Spring Boot and Kotlin Exposed. I focused on small, testable modules and a hexagonal structure so the core logic lives alone and adapters do the dirty work. That made tests simpler, database changes safer, and future refactors less scary.",
+  "keyAchievements": [
+    {
+      "title": "Cleaner language",
+      "description": "Moved the codebase to Kotlin. Less boilerplate, clearer null handling, and more expressive APIs made daily work noticeably faster."
+    },
+    {
+      "title": "Safer database access",
+      "description": "Replaced MyBatis with Kotlin Exposed to get compile-time type checks for queries and fewer runtime surprises."
+    },
+    {
+      "title": "Hexagonal architecture",
+      "description": "Separated business rules from I/O (API, DB). That paid off immediately: I could run unit tests without spinning up databases."
+    },
+    {
+      "title": "Multi-database compatibility",
+      "description": "Kept compatibility with MySQL, Oracle and SQL Server while moving the code to a single, consistent data-access layer."
+    },
+    {
+      "title": "Practical quality gains",
+      "description": "Introduced consistent error handling, better logging, and test containers for integration tests — real things that make debugging less painful."
+    }
+  ],
+  "technologies": [
+    { "name": "Kotlin", "proficiency": "Expert" },
+    { "name": "Spring Boot", "proficiency": "Expert" },
+    { "name": "Kotlin Exposed", "proficiency": "Advanced" },
+    { "name": "PostgreSQL", "proficiency": "Advanced" },
+    { "name": "Oracle DB", "proficiency": "Intermediate" },
+    { "name": "SQL Server", "proficiency": "Intermediate" }
+  ],
+  "techStack": {
+    "title": "Technical stack",
+    "items": [
+      {
+        "category": "Backend",
+        "items": ["Kotlin", "Spring Boot", "Coroutines"]
+      },
+      { "category": "ORM", "items": ["Kotlin Exposed", "Spring Data"] },
+      {
+        "category": "Databases",
+        "items": ["PostgreSQL", "MySQL", "Oracle", "SQL Server"]
+      },
+      { "category": "API", "items": ["REST", "Serialization", "Validation"] },
+      {
+        "category": "Testing",
+        "items": ["JUnit 5", "Testcontainers", "MockK"]
+      },
+      { "category": "DevOps", "items": ["Docker", "Flyway"] }
+    ]
+  },
+  "metrics": [
+    { "label": "Less boilerplate", "value": "≈40%" },
+    { "label": "Test coverage", "value": "85%+" },
+    { "label": "Databases supported", "value": "3" },
+    { "label": "Perf improvement", "value": "+15%" }
+  ],
+  "learnings": [
+    "Small, opinionated conventions beat vague patterns when multiple DBs are involved.",
+    "Hexagonal boundaries make refactors low-risk. I wish I'd done this sooner.",
+    "Type-safe queries save time during debugging — the IDE becomes your friend.",
+    "Backward compatibility matters: we kept the old DBs while moving forward."
+  ]
+}

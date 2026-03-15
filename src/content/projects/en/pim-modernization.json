@@ -1,0 +1,77 @@
+{
+  "slug": "pim-modernization",
+  "locale": "en",
+  "title": "PIM frontend modernization",
+  "subtitle": "Turned a fragmented UI into a single, maintainable design system",
+  "period": "Jan - Apr 2024",
+  "overview": "I rebuilt the PIM frontend to stop fighting the UI. Over the years the app had picked up Material UI, Chakra, and a pile of custom components — the result was inconsistent behavior and slower development. I replaced that mess with a single ShadcnUI-based design system, cleaned up interactions, and made everyday tasks noticeably faster for the people who use the product.",
+  "challenge": "Different teams had added different UI libraries as needs arose. Buttons looked different across pages, forms behaved inconsistently, and small visual differences caused repeated bugfixes. The frontend was hard to maintain, and shipping new features required too much manual polishing.",
+  "solution": "I chose ShadcnUI as a pragmatic, accessible foundation and rewrote the most-used components first. The work included a component library, design tokens, accessible defaults, and a migration plan that let the team roll changes out incrementally. I focused on the flows editors use most: multi-select lists, bulk edits, inline editing, and clear media previews.",
+  "keyAchievements": [
+    {
+      "title": "One design system",
+      "description": "Replaced multiple UI libraries with a single ShadcnUI component library so components behave the same everywhere."
+    },
+    {
+      "title": "Fewer surprises for users",
+      "description": "Standardized form controls, loading states, and error handling so editors run fewer manual checks and recover faster from mistakes."
+    },
+    {
+      "title": "Faster data operations",
+      "description": "Added multi-select, bulk edit, and inline editing flows that cut repetitive work for power users."
+    },
+    {
+      "title": "Media management that works",
+      "description": "Built image and PDF previews into the PIM so media can be inspected before publishing, reducing bad uploads."
+    },
+    {
+      "title": "Cleaner codebase",
+      "description": "Refactored and documented components, making future changes safer and faster for the team."
+    }
+  ],
+  "technologies": [
+    { "name": "React", "proficiency": "Expert" },
+    { "name": "TypeScript", "proficiency": "Expert" },
+    { "name": "ShadcnUI", "proficiency": "Advanced" },
+    { "name": "Tailwind CSS", "proficiency": "Advanced" },
+    { "name": "Go", "proficiency": "Intermediate" },
+    { "name": "Neo4j", "proficiency": "Intermediate" }
+  ],
+  "techStack": {
+    "title": "Technical stack",
+    "items": [
+      {
+        "category": "Frontend",
+        "items": ["React", "TypeScript", "ShadcnUI", "Tailwind CSS"]
+      },
+      {
+        "category": "Styling",
+        "items": ["Tailwind CSS", "CSS Modules"]
+      },
+      {
+        "category": "State",
+        "items": ["React Hooks", "Context API"]
+      },
+      {
+        "category": "Backend",
+        "items": ["Go", "gRPC"]
+      },
+      {
+        "category": "Database",
+        "items": ["Neo4j", "Cypher"]
+      }
+    ]
+  },
+  "metrics": [
+    { "label": "Component variants removed", "value": "40%" },
+    { "label": "Development time saved", "value": "~25%" },
+    { "label": "UI consistency", "value": "High" },
+    { "label": "New editor features", "value": "7+" }
+  ],
+  "learnings": [
+    "A single design system reduces friction more than any one fancy component library.",
+    "Ship the smallest consistent piece first — migrating all buttons at once beats piecemeal fixes.",
+    "Accessibility and sensible defaults save time later; it’s worth doing this early.",
+    "Listen to editors — small UX changes can remove hours of repetitive work."
+  ]
+}

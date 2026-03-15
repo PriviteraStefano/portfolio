@@ -1,0 +1,68 @@
+{
+  "slug": "aris-scripting",
+  "locale": "it",
+  "title": "Scripting e automazione ARIS",
+  "subtitle": "Report personalizzati e macro per una piattaforma enterprise datata",
+  "period": "Nov - Dic 2023",
+  "overview": "Ho sviluppato una serie di report e macro di automazione per la piattaforma SAP ARIS. A causa della documentazione limitata e di un runtime datato, gran parte del lavoro è consistito in test esplorativi e nella costruzione di script piccoli e affidabili che portassero valore immediato al business.",
+  "challenge": "ARIS gira su un runtime precedente a Java SE8 e offre un modello di scripting ibrido con scarsa documentazione. Ho dovuto comprendere gli oggetti runtime e le API senza rischiare i dati di produzione, e consegnare automazioni utili in tempi brevi.",
+  "solution": "Ho iniziato con probe mirate per osservare i cicli di vita degli oggetti e le API disponibili, poi ho implementato report e macro in ARIS Script (ibrido Java SE6 + JavaScript). Ho privilegiato script piccoli e testabili e procedure di deploy sicure (controlli e fallback) per evitare interruzioni.",
+  "keyAchievements": [
+    {
+      "title": "Esplorazione rapida della piattaforma",
+      "description": "Progettati esperimenti contenuti per osservare in sicurezza il comportamento runtime e iterato finché gli script non sono risultati prevedibili."
+    },
+    {
+      "title": "Generazione report affidabile",
+      "description": "Consegna di report che estraggono dati di processo, li formattano per il consumo del business e li esportano nei formati richiesti."
+    },
+    {
+      "title": "Macro di automazione pratiche",
+      "description": "Costruite macro che permettono agli utenti business di eseguire operazioni ricorrenti senza dipendere dagli sviluppatori."
+    },
+    {
+      "title": "Deployment sicuro e senza downtime",
+      "description": "Introdotte validazioni e protezioni negli script per prevenire modifiche accidentali ai dati critici durante i rilasci."
+    },
+    {
+      "title": "Cattura della conoscenza",
+      "description": "Documentate scoperte e pattern per ridurre il tempo di onboarding per futuri manutentori su ARIS."
+    }
+  ],
+  "technologies": [
+    { "name": "ARIS Script", "proficiency": "Intermedio" },
+    { "name": "Java SE6", "proficiency": "Intermedio" },
+    { "name": "JavaScript", "proficiency": "Intermedio" },
+    { "name": "SAP ARIS", "proficiency": "Intermedio" }
+  ],
+  "techStack": {
+    "title": "Stack tecnologico",
+    "items": [
+      {
+        "category": "Scripting",
+        "items": ["ARIS Script", "Java SE6", "JavaScript"]
+      },
+      { "category": "Piattaforma", "items": ["SAP ARIS", "Process Mining"] },
+      {
+        "category": "Integrazione",
+        "items": ["ARIS APIs", "Esportazione dati"]
+      }
+    ]
+  },
+  "metrics": [
+    { "label": "Script consegnati", "value": "5" },
+    { "label": "Tempo al primo report utile", "value": "2 settimane" },
+    { "label": "Uptime durante i cambiamenti", "value": "100%" },
+    { "label": "Feedback cliente", "value": "Positivo" }
+  ],
+  "learnings": [
+    "Piccoli esperimenti sono più veloci e sicuri di lunghe analisi quando la documentazione manca.",
+    "Ogni operazione di scrittura va protetta con controlli: i sistemi legacy spesso non segnalano errori chiari.",
+    "Documentare le scoperte immediatamente: la manutenzione futura dipende da note concise ed esempi."
+  ],
+  "testimonial": {
+    "quote": "Gli script di automazione forniti da Stefano hanno trasformato report manuali e soggetti a errori in un processo ripetibile e affidabile, senza downtime.",
+    "author": "Responsabile di processo, Cliente",
+    "role": "Responsabile di processo"
+  }
+}

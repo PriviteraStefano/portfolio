@@ -1,0 +1,66 @@
+{
+  "slug": "data-integrations",
+  "locale": "en",
+  "title": "ETL pipelines & system integrations",
+  "subtitle": "Keeping disparate enterprise systems in sync with a pragmatic, reusable approach",
+  "period": "2024–2025",
+  "overview": "I built a set of data synchronization pipelines to stop fragile, one-off integrations from slowing the business down. Instead of hammering together bespoke scripts each time, I created reusable client libraries and a small configurable ETL engine so new integrations are reliable and repeatable.",
+  "challenge": "HR, ERP, process automation and PIM lived in separate systems (SuccessFactors, NetSuite, ARIS, a custom PIM). Each new data flow meant rewriting glue code and risking production. That made launches slow and operational support painful.",
+  "solution": "I split the problem into three practical layers: small, reusable service clients; a transformation engine driven by a simple Expr-based configuration; and an orchestration layer that runs and monitors pipelines. Each piece is versioned and tested independently so teams can add a connector without touching everything else.",
+  "keyAchievements": [
+    {
+      "title": "Near-real-time sync",
+      "description": "Delivered a SuccessFactors ↔ ARIS sync that reduced stale data windows from hours to minutes. It runs as a Kubernetes cron job and tolerates transient failures."
+    },
+    {
+      "title": "Config-driven field mapping",
+      "description": "Built an Expr-based mapping format so product managers can tweak field rules without a deploy. It supports computed fields and conditional transforms."
+    },
+    {
+      "title": "Reusable client libraries",
+      "description": "Implemented small Go clients for NetSuite, ARIS and the internal PIM so new pipelines start from working code instead of a blank file."
+    },
+    {
+      "title": "Production reliability",
+      "description": "Added retry logic, validation checks and clear observability so failures surface promptly and recover automatically where safe."
+    },
+    {
+      "title": "Scalable architecture",
+      "description": "Designed the pipeline to run many syncs in parallel without cross-contamination and to make backfills and ad-hoc exports straightforward."
+    }
+  ],
+  "technologies": [
+    { "name": "Go", "proficiency": "Expert" },
+    { "name": "Kotlin", "proficiency": "Advanced" },
+    { "name": "gRPC", "proficiency": "Advanced" },
+    { "name": "PostgreSQL", "proficiency": "Advanced" },
+    { "name": "Kubernetes", "proficiency": "Intermediate" },
+    { "name": "SAP APIs", "proficiency": "Intermediate" }
+  ],
+  "techStack": {
+    "title": "Technical stack",
+    "items": [
+      { "category": "Languages", "items": ["Go", "Kotlin", "YAML"] },
+      { "category": "Platforms", "items": ["Kubernetes", "Docker", "Linux"] },
+      { "category": "Protocols", "items": ["gRPC", "REST", "OAuth2"] },
+      {
+        "category": "Data processing",
+        "items": ["Expr (mapping)", "JSON Schema", "Streaming"]
+      },
+      { "category": "Storage", "items": ["PostgreSQL", "Redis"] },
+      { "category": "CI / CD", "items": ["GitHub Actions", "Docker Compose"] }
+    ]
+  },
+  "metrics": [
+    { "label": "Systems integrated", "value": "4+" },
+    { "label": "Sync latency", "value": "minutes" },
+    { "label": "Mapping rules", "value": "100+" },
+    { "label": "Pipeline success rate", "value": ">99.5%" }
+  ],
+  "learnings": [
+    "Treat integrations as products: they need releases, tests and clear ownership.",
+    "Configuration beats copy-paste. Giving non-developers safe knobs (mapping rules) saves time and reduces risk.",
+    "Good observability turns noisy support tickets into quick rollbacks and targeted fixes.",
+    "Small, well-tested client libraries dramatically shorten onboarding for new connectors."
+  ]
+}

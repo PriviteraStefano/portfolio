@@ -1,0 +1,68 @@
+{
+  "slug": "supplier-portal",
+  "locale": "en",
+  "title": "Enterprise supplier portal",
+  "subtitle": "Modernized frontend for a multi-service supplier platform",
+  "period": "Jul - Present",
+  "overview": "I led the frontend work for a supplier portal used across many teams. We consolidated scattered React apps written in JavaScript into a single TypeScript codebase, improved developer workflows, and made the UI more predictable for users and integrators.",
+  "challenge": "The portal had grown organically in dozens of repositories. Different teams copied similar code, patterns diverged, and TypeScript coverage was low. That made changes slow, introduced bugs, and made on-boarding new developers harder.",
+  "solution": "We moved to a centralized frontend architecture using React + TypeScript and a shared component library. I introduced consistent patterns for state and API integration, set up incremental migration paths so services could move at their own pace, and added tests and automation to reduce regressions.",
+  "keyAchievements": [
+    {
+      "title": "Shared component library",
+      "description": "Built a small, well-documented component library that replaced duplicated UI code and made interfaces consistent across services."
+    },
+    {
+      "title": "Incremental migration",
+      "description": "Migrated services gradually to TypeScript and the new architecture to avoid big-bang rewrites and reduce downtime."
+    },
+    {
+      "title": "Developer experience",
+      "description": "Standardized linting, CI checks, and local dev tooling so onboarding and day-to-day work are faster and less error-prone."
+    },
+    {
+      "title": "Service abstraction",
+      "description": "Created clear API integration layers so frontend teams can work with multiple backend services without repeating business logic."
+    },
+    {
+      "title": "Performance work",
+      "description": "Reduced bundle size, added code-splitting and lazy loading in key areas to improve perceived page speed."
+    }
+  ],
+  "technologies": [
+    { "name": "React", "proficiency": "Expert" },
+    { "name": "TypeScript", "proficiency": "Expert" },
+    { "name": "Vite", "proficiency": "Advanced" },
+    { "name": "TanStack Query", "proficiency": "Advanced" },
+    { "name": "gRPC / REST", "proficiency": "Advanced" },
+    { "name": "Playwright", "proficiency": "Intermediate" }
+  ],
+  "techStack": {
+    "title": "Technical stack",
+    "items": [
+      {
+        "category": "Frontend",
+        "items": ["React", "TypeScript", "Vite", "TailwindCSS"]
+      },
+      { "category": "State & Data", "items": ["TanStack Query", "Zustand"] },
+      { "category": "APIs", "items": ["gRPC", "REST", "OpenAPI"] },
+      { "category": "Infra", "items": ["Docker", "Kubernetes", "AWS"] },
+      {
+        "category": "Testing",
+        "items": ["Vitest", "Playwright", "React Testing Library"]
+      }
+    ]
+  },
+  "metrics": [
+    { "label": "Services integrated", "value": "10+" },
+    { "label": "TypeScript coverage", "value": "100%" },
+    { "label": "Bundle size reduction", "value": "35%" },
+    { "label": "Page load time", "value": "-45%" }
+  ],
+  "learnings": [
+    "TypeScript reduces a lot of wasted time — not a magic fix, but it helps.",
+    "Small shared components plus clear docs beats large UI frameworks for maintenance.",
+    "Incremental migration keeps the business running while the code improves.",
+    "Designing APIs with frontends in mind makes orchestration far simpler."
+  ]
+}

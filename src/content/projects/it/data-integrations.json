@@ -1,0 +1,66 @@
+{
+  "slug": "data-integrations",
+  "locale": "it",
+  "title": "Pipeline ETL e integrazioni di sistema",
+  "subtitle": "Sincronizzare sistemi enterprise senza ricominciare ogni volta da zero",
+  "period": "2024–2025",
+  "overview": "Ho realizzato pipeline di sincronizzazione dati per eliminare integrazioni fragili e ripetitive. Invece di riscrivere script ad-hoc per ogni caso, ho creato librerie riutilizzabili e un motore ETL configurabile in modo che le nuove integrazioni siano affidabili e ripetibili.",
+  "challenge": "HR, ERP, process automation e PIM (SuccessFactors, NetSuite, ARIS e un PIM interno) vivevano separati. Ogni nuovo flusso richiedeva riscritture di codice di collegamento e metteva a rischio la produzione, rallentando le release e aumentando il carico operativo.",
+  "solution": "Ho diviso il problema in tre livelli pratici: client di servizio piccoli e riutilizzabili; un motore di trasformazione configurato con Expr; e un livello di orchestrazione che esegue e monitora le pipeline. Ogni componente ha versioning e test indipendenti, così si può aggiungere un connector senza toccare il resto.",
+  "keyAchievements": [
+    {
+      "title": "Sincronizzazione quasi in tempo reale",
+      "description": "Conseguita la sincronizzazione SuccessFactors ↔ ARIS che ha ridotto il delay da ore a minuti. Il job gira come cron su Kubernetes e resiste a errori transitori."
+    },
+    {
+      "title": "Mappature configurabili",
+      "description": "Creato un formato di mapping basato su Expr: i product manager possono modificare regole senza deploy; supporta campi calcolati e condizioni."
+    },
+    {
+      "title": "Librerie client riutilizzabili",
+      "description": "Implementate librerie Go per NetSuite, ARIS e il PIM interno: partire da codice funzionante è molto più veloce che ricominciare da zero."
+    },
+    {
+      "title": "Affidabilità in produzione",
+      "description": "Aggiunti retry, controlli di validazione e osservabilità chiara: i fallimenti si segnalano subito e si può recuperare quando possibile."
+    },
+    {
+      "title": "Architettura scalabile",
+      "description": "Il design delle pipeline permette esecuzioni parallele senza contaminazione e rende semplici retry, backfill ed esportazioni ad-hoc."
+    }
+  ],
+  "technologies": [
+    { "name": "Go", "proficiency": "Expert" },
+    { "name": "Kotlin", "proficiency": "Avanzato" },
+    { "name": "gRPC", "proficiency": "Avanzato" },
+    { "name": "PostgreSQL", "proficiency": "Avanzato" },
+    { "name": "Kubernetes", "proficiency": "Intermedio" },
+    { "name": "SAP APIs", "proficiency": "Intermedio" }
+  ],
+  "techStack": {
+    "title": "Stack tecnologico",
+    "items": [
+      { "category": "Linguaggi", "items": ["Go", "Kotlin", "YAML"] },
+      { "category": "Piattaforme", "items": ["Kubernetes", "Docker", "Linux"] },
+      { "category": "Protocolli", "items": ["gRPC", "REST", "OAuth2"] },
+      {
+        "category": "Elaborazione dati",
+        "items": ["Expr (mapping)", "JSON Schema", "Streaming"]
+      },
+      { "category": "Storage", "items": ["PostgreSQL", "Redis"] },
+      { "category": "CI / CD", "items": ["GitHub Actions", "Docker Compose"] }
+    ]
+  },
+  "metrics": [
+    { "label": "Sistemi integrati", "value": "4+" },
+    { "label": "Latency sincronizzazione", "value": "minuti" },
+    { "label": "Regole di mapping", "value": "100+" },
+    { "label": "Success rate pipeline", "value": ">99.5%" }
+  ],
+  "learnings": [
+    "Le integrazioni vanno trattate come prodotti: hanno bisogno di release, test e ownership.",
+    "La configurazione batte la copia del codice: dare controlli sicuri a non-developer riduce i rischi.",
+    "L'osservabilità ben fatta trasforma ticket rumorosi in rollback rapidi e fix mirati.",
+    "Librerie client piccole e testate accelerano molto l'onboarding di nuovi connector."
+  ]
+}

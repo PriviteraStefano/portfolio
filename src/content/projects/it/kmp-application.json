@@ -1,0 +1,72 @@
+{
+  "slug": "kmp-application",
+  "locale": "it",
+  "title": "App Magazzino Kotlin Multiplatform",
+  "subtitle": "Reimplementazione di un sistema di 12 anni in una piattaforma modulare",
+  "period": "2024 - Presente",
+  "overview": "Ho riscritto un'applicazione di gestione magazzino legacy usando Kotlin Multiplatform. Il vecchio codice era diventato difficile da estendere: ora ho ridotto la complessità con una libreria core snella e moduli client-specifici, così ogni team può rilasciare più velocemente senza conflitti.",
+  "challenge": "L'app era nata su Windows Mobile e poi è stata portata su Android con Java e XML. Dopo anni di modifiche rapide, ogni cliente aveva variazioni e mantenere tutto era costoso e rischioso.",
+  "solution": "Ho scelto Kotlin Multiplatform per condividere la logica tra Android, iOS, desktop e web. Ho separato il progetto in un core testato e moduli opzionali: per un nuovo cliente basta riusare il core e aggiungere i moduli necessari, evitando fork e duplicazioni.",
+  "keyAchievements": [
+    {
+      "title": "Design modulare e pratico",
+      "description": "Libreria core per la logica condivisa e moduli indipendenti per le personalizzazioni cliente. Questo permette di far evolvere il core senza toccare ogni implementazione."
+    },
+    {
+      "title": "Integrazioni ERP",
+      "description": "Integrazione con Oracle JDE e NetSuite, così la stessa app funziona in diversi contesti senza riscritture estese."
+    },
+    {
+      "title": "Percorso veloce alla produzione",
+      "description": "Primo rollout in produzione in circa tre mesi; abbiamo rapidamente aggiunto altri clienti."
+    },
+    {
+      "title": "Distribuzione web con WASM",
+      "description": "Aggiunto supporto WebAssembly per distribuire parti dell'app via browser, riducendo la necessità di aggiornamenti lato client."
+    },
+    {
+      "title": "Leadership tecnica pratica",
+      "description": "Ho ricoperto il ruolo di tech lead, confrontandomi direttamente con i clienti per definire priorità realistiche."
+    }
+  ],
+  "technologies": [
+    { "name": "Kotlin", "proficiency": "Expert" },
+    { "name": "Kotlin Multiplatform", "proficiency": "Expert" },
+    { "name": "WebAssembly", "proficiency": "Intermedio" },
+    { "name": "Oracle JDE", "proficiency": "Intermedio" },
+    { "name": "NetSuite", "proficiency": "Intermedio" },
+    { "name": "Ktor", "proficiency": "Intermedio" }
+  ],
+  "techStack": {
+    "title": "Stack tecnologico",
+    "items": [
+      { "category": "Linguaggio", "items": ["Kotlin", "Kotlin Multiplatform"] },
+      {
+        "category": "Piattaforme",
+        "items": ["Android", "iOS", "Web (WASM)", "Desktop"]
+      },
+      { "category": "Networking", "items": ["gRPC", "REST APIs", "OAuth2"] },
+      {
+        "category": "Integrazione ERP",
+        "items": ["Oracle JDE APIs", "NetSuite APIs"]
+      },
+      { "category": "Storage", "items": ["SQLite", "PostgreSQL"] },
+      {
+        "category": "Strumenti",
+        "items": ["IntelliJ IDEA", "Gradle", "GitHub"]
+      }
+    ]
+  },
+  "metrics": [
+    { "label": "Clienti in produzione", "value": "2+" },
+    { "label": "Moduli personalizzati", "value": "6+" },
+    { "label": "Tempo al primo rilascio", "value": "3 mesi" },
+    { "label": "Codice condiviso", "value": "~65%" }
+  ],
+  "learnings": [
+    "Un core piccolo e ben testato riduce la duplicazione e i problemi in produzione.",
+    "Parlare con gli utenti reali evita di costruire funzionalità che nessuno usa.",
+    "Kotlin Multiplatform permette di condividere la logica senza imporre una sola UI.",
+    "WASM è uno strumento pratico quando vuoi evitare aggiornamenti client frequenti."
+  ]
+}

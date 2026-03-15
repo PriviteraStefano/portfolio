@@ -1,0 +1,72 @@
+{
+  "slug": "kmp-application",
+  "locale": "en",
+  "title": "Kotlin Multiplatform Warehouse App",
+  "subtitle": "Rebuilding a 12-year-old system into a modular, shareable platform",
+  "period": "2024 - Present",
+  "overview": "I rebuilt a legacy warehouse management app from the ground up using Kotlin Multiplatform. The old codebase was tangled after years of ad-hoc patches; the new approach focuses on a small, well-tested core and client-specific modules so teams can ship changes faster without stepping on each other's work.",
+  "challenge": "The original app started on Windows Mobile, then shifted to Android with Java and XML over many years. It worked, but adding features or supporting a new client meant long, risky changes. Each customer had a slightly different fork and that made maintenance painful.",
+  "solution": "I picked Kotlin Multiplatform to share logic across Android, iOS, desktop, and the web. I split the product into a core library and optional modules so a new client can reuse the core and only add the pieces they need. That reduced duplication and made releases predictable.",
+  "keyAchievements": [
+    {
+      "title": "Practical modular design",
+      "description": "Built a small core library for shared domain logic and separate modules for client-specific behavior. That made it possible to evolve the core independently from client customizations."
+    },
+    {
+      "title": "ERP integrations",
+      "description": "Integrated with Oracle JDE and NetSuite so the same app can run in different environments without heavy rewrites."
+    },
+    {
+      "title": "Fast path to production",
+      "description": "Delivered the first production rollout in about three months and scaled to multiple clients shortly after."
+    },
+    {
+      "title": "Web distribution via WASM",
+      "description": "Added WebAssembly support so parts of the app can be served in a browser, reducing the need for frequent client updates."
+    },
+    {
+      "title": "Hands-on technical leadership",
+      "description": "Acted as sole technical lead for the business unit, working directly with clients to shape priorities and avoid building features nobody needed."
+    }
+  ],
+  "technologies": [
+    { "name": "Kotlin", "proficiency": "Expert" },
+    { "name": "Kotlin Multiplatform", "proficiency": "Expert" },
+    { "name": "WebAssembly", "proficiency": "Intermediate" },
+    { "name": "Oracle JDE", "proficiency": "Intermediate" },
+    { "name": "NetSuite", "proficiency": "Intermediate" },
+    { "name": "Ktor", "proficiency": "Intermediate" }
+  ],
+  "techStack": {
+    "title": "Technical stack",
+    "items": [
+      { "category": "Language", "items": ["Kotlin", "Kotlin Multiplatform"] },
+      {
+        "category": "Platforms",
+        "items": ["Android", "iOS", "Web (WASM)", "Desktop"]
+      },
+      { "category": "Networking", "items": ["gRPC", "REST APIs", "OAuth2"] },
+      {
+        "category": "ERP integration",
+        "items": ["Oracle JDE APIs", "NetSuite APIs"]
+      },
+      { "category": "Storage", "items": ["SQLite", "PostgreSQL"] },
+      {
+        "category": "Dev tools",
+        "items": ["IntelliJ IDEA", "Gradle", "GitHub"]
+      }
+    ]
+  },
+  "metrics": [
+    { "label": "Clients in production", "value": "2+" },
+    { "label": "Custom modules", "value": "6+" },
+    { "label": "Time to first production", "value": "3 months" },
+    { "label": "Shared code", "value": "~65%" }
+  ],
+  "learnings": [
+    "A small, well-tested core prevents most duplication and makes shipping safer.",
+    "Talking to the actual users early avoids building shiny features no one needs.",
+    "Kotlin Multiplatform lets you share business logic without forcing one UI stack on everyone.",
+    "WASM can be surprisingly useful for distribution when you want to avoid frequent client updates."
+  ]
+}

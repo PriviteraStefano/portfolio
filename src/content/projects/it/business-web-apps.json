@@ -1,0 +1,72 @@
+{
+  "slug": "business-web-apps",
+  "locale": "it",
+  "title": "JDE → Web: Applicazioni Business",
+  "subtitle": "Reimplementazione di workflow JDE come web app pratiche e orientate ai dati",
+  "period": "Feb - Giu 2024",
+  "overview": "Ho sostituito diverse schermate JDE scomode con web app che lasciano lavorare i dati, invece di ostacolarli. Le interfacce gestiscono dataset grandi, permettono filtri e export rapidi e riducono i workaround manuali. Ho anche affiancato il team per far sì che il lavoro proseguisse.",
+  "challenge": "Le schermate JDE erano difficili per gli utenti e onerose da mantenere. Erano state pensate per un'epoca diversa: UX limitata, integrazioni fragili e poco spazio per nuove viste o export. Gli utenti chiedevano strumenti flessibili per esplorare e estrarre dati, non report fissi.",
+  "solution": "Ho sviluppato frontend in React + TypeScript e API in Java + Spring Boot. I frontend usano data grid configurabili con colonne dinamiche, valori calcolati lato client, endpoint server performanti per query pesanti e export in CSV, Excel e PDF. Per i percorsi dati più carichi abbiamo usato gRPC per mantenere la latenza bassa. Priorità: feature parity, poi UX più pulita e iterazioni rapide.",
+  "keyAchievements": [
+    {
+      "title": "Data grid funzionanti",
+      "description": "Consegna di griglie configurabili con colonne dinamiche, filtri veloci e paginazione sensata: lavorare con oltre 10k righe è diventato pratico."
+    },
+    {
+      "title": "Export affidabili",
+      "description": "Implementati export CSV/Excel/PDF che preservano formattazione e campi calcolati: nessuna correzione manuale nei report a valle."
+    },
+    {
+      "title": "Percorsi client-server più rapidi",
+      "description": "Uso di gRPC dove serviva per ridurre i tempi di risposta su query ripetute: gli utenti l'hanno notato nella routine quotidiana."
+    },
+    {
+      "title": "Mentoring pratico",
+      "description": "Ho affiancato un developer junior su React e TypeScript: abbiamo consegnato esempi e pattern concreti, non solo linee guida."
+    },
+    {
+      "title": "Migrazione graduale",
+      "description": "Migrazione delle funzionalità dall'interfaccia XML al web senza interrompere i flussi; possibilità di sostituire i componenti passo dopo passo."
+    }
+  ],
+  "technologies": [
+    { "name": "React", "proficiency": "Expert" },
+    { "name": "TypeScript", "proficiency": "Expert" },
+    { "name": "Java", "proficiency": "Avanzato" },
+    { "name": "Spring Boot", "proficiency": "Avanzato" },
+    { "name": "gRPC", "proficiency": "Avanzato" },
+    { "name": "PostgreSQL", "proficiency": "Intermedio" }
+  ],
+  "techStack": {
+    "title": "Stack tecnico",
+    "items": [
+      {
+        "category": "Frontend",
+        "items": ["React", "TypeScript", "TanStack Table"]
+      },
+      {
+        "category": "Styling & Components",
+        "items": ["TailwindCSS", "Shadcn UI"]
+      },
+      {
+        "category": "Backend",
+        "items": ["Java", "Spring Boot", "Spring Data"]
+      },
+      { "category": "APIs", "items": ["gRPC", "REST"] },
+      { "category": "Export", "items": ["XLSX", "PDF generation", "CSV"] },
+      { "category": "DevOps", "items": ["Docker", "Kubernetes"] }
+    ]
+  },
+  "metrics": [
+    { "label": "Feature migrate", "value": "15+" },
+    { "label": "Righe gestite", "value": "10k+ / vista" },
+    { "label": "Formati export", "value": "3" },
+    { "label": "Tempo sviluppo vs legacy", "value": "-50%" }
+  ],
+  "learnings": [
+    "Spesso è meglio piccoli miglioramenti continui rispetto a un'unica riscrittura mastodontica.",
+    "Coinvolgere gli utenti finali sulle prime versioni evita grandi ritorni sui requisiti.",
+    "Gli strumenti giusti (griglie configurabili, export affidabili) cambiano il modo in cui i team lavorano, non solo l'interfaccia.",
+    "Mentoring pratico lascia un'eredità più duratura di documentazione astratta."
+  ]
+}

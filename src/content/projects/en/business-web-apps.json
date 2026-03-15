@@ -1,0 +1,72 @@
+{
+  "slug": "business-web-apps",
+  "locale": "en",
+  "title": "JDE → Web: Business Applications",
+  "subtitle": "Rebuilding old JDE workflows as practical, data-heavy web apps",
+  "period": "Feb - Jun 2024",
+  "overview": "I replaced several clunky JDE screens with web applications that make data work instead of fighting it. The interfaces handle large datasets, let users slice and export information in whatever format they need, and reduce the number of manual workarounds people used to rely on. I also mentored teammates so this approach stuck.",
+  "challenge": "The original JDE screens were hard to use and hard to maintain. They were built for a different era: limited UX patterns, brittle integrations, and no easy way to add new views or exports. Business users needed flexible tools to explore and extract data, not yet another static report.",
+  "solution": "I built React + TypeScript frontends backed by a Java + Spring Boot API. The frontends use configurable data grids with dynamic columns, client-side calculated values, fast server endpoints for large queries, and export features (CSV, Excel, PDF). For heavy data paths we used gRPC to keep latency low. The goal was feature parity first, then cleaner workflows and faster iteration.",
+  "keyAchievements": [
+    {
+      "title": "Data grids that behave",
+      "description": "Delivered configurable grids with dynamic columns, fast filtering, and sensible pagination so users can actually work with 10k+ rows without endless scrolling."
+    },
+    {
+      "title": "Exports that don't lie",
+      "description": "Implemented CSV/Excel/PDF exports that preserve formatting and calculated fields so downstream reports no longer need manual fixes."
+    },
+    {
+      "title": "Faster client-server paths",
+      "description": "Used gRPC where it mattered to reduce request times for large, repeated queries—users noticed the difference during day-to-day tasks."
+    },
+    {
+      "title": "Practical mentoring",
+      "description": "Mentored a junior developer on React and TypeScript. We shipped patterns and code examples, not just guidance, so the team could continue the work."
+    },
+    {
+      "title": "Smooth migration",
+      "description": "Migrated features from the XML-based UI to the web apps without breaking workflows; the product teams could swap components incrementally."
+    }
+  ],
+  "technologies": [
+    { "name": "React", "proficiency": "Expert" },
+    { "name": "TypeScript", "proficiency": "Expert" },
+    { "name": "Java", "proficiency": "Advanced" },
+    { "name": "Spring Boot", "proficiency": "Advanced" },
+    { "name": "gRPC", "proficiency": "Advanced" },
+    { "name": "PostgreSQL", "proficiency": "Intermediate" }
+  ],
+  "techStack": {
+    "title": "Technical stack",
+    "items": [
+      {
+        "category": "Frontend",
+        "items": ["React", "TypeScript", "TanStack Table"]
+      },
+      {
+        "category": "Styling & Components",
+        "items": ["TailwindCSS", "Shadcn UI"]
+      },
+      {
+        "category": "Backend",
+        "items": ["Java", "Spring Boot", "Spring Data"]
+      },
+      { "category": "APIs", "items": ["gRPC", "REST"] },
+      { "category": "Exports", "items": ["XLSX", "PDF generation", "CSV"] },
+      { "category": "DevOps", "items": ["Docker", "Kubernetes"] }
+    ]
+  },
+  "metrics": [
+    { "label": "Features migrated", "value": "15+" },
+    { "label": "Rows handled", "value": "10k+ / view" },
+    { "label": "Export formats", "value": "3" },
+    { "label": "Development time vs legacy", "value": "-50%" }
+  ],
+  "learnings": [
+    "Small, continuous improvements often beat one giant rewrite.",
+    "Involving end users early prevents big rework later.",
+    "The right tools—configurable grids and reliable exports—change how teams work, not just the UI.",
+    "Practical mentoring leaves a longer-lasting impact than abstract docs."
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "slug": "aris-scripting",
+  "locale": "en",
+  "title": "ARIS scripting and automation",
+  "subtitle": "Custom reports and macros for a legacy enterprise platform",
+  "period": "Nov - Dec 2023",
+  "overview": "Developed a set of custom report generators and automation macros for the SAP ARIS platform. Due to limited documentation and an older runtime, most effort focused on exploratory testing and building small, reliable scripts that delivered immediate business value.",
+  "challenge": "ARIS runs on a pre-Java SE8 runtime and exposes a hybrid scripting model with sparse documentation. I needed to understand runtime objects and APIs without risking production data, and deliver useful automation within short time constraints.",
+  "solution": "Started with focused probes to observe object lifecycles and APIs, then implemented ARIS Script (Java SE6 + JavaScript hybrid) reports and macros. Prioritized small, testable scripts and safe deployment patterns (checks and fallbacks) to avoid disruptions.",
+  "keyAchievements": [
+    {
+      "title": "Rapid platform exploration",
+      "description": "Designed small experiments to safely observe runtime behavior and iterated until script behavior was predictable."
+    },
+    {
+      "title": "Reliable report generation",
+      "description": "Delivered report scripts that extract process data, format it for business consumption, and export in required formats."
+    },
+    {
+      "title": "Practical automation macros",
+      "description": "Built macros that let business users run routine operations without needing deep developer involvement."
+    },
+    {
+      "title": "Safe, zero-downtime deployment",
+      "description": "Added validation and guardrails to scripts to prevent accidental modifications to critical data during deployment."
+    },
+    {
+      "title": "Knowledge capture",
+      "description": "Documented findings and patterns to reduce onboarding time for future maintainers working with ARIS."
+    }
+  ],
+  "technologies": [
+    { "name": "ARIS Script", "proficiency": "Intermediate" },
+    { "name": "Java SE6", "proficiency": "Intermediate" },
+    { "name": "JavaScript", "proficiency": "Intermediate" },
+    { "name": "SAP ARIS", "proficiency": "Intermediate" }
+  ],
+  "techStack": {
+    "title": "Technical stack",
+    "items": [
+      {
+        "category": "Scripting",
+        "items": ["ARIS Script", "Java SE6", "JavaScript"]
+      },
+      {
+        "category": "Platform",
+        "items": ["SAP ARIS", "Process Mining"]
+      },
+      {
+        "category": "Integration",
+        "items": ["ARIS APIs", "Data export"]
+      }
+    ]
+  },
+  "metrics": [
+    { "label": "Scripts delivered", "value": "5" },
+    { "label": "Time to first usable report", "value": "2 weeks" },
+    { "label": "Uptime during changes", "value": "100%" },
+    { "label": "Client feedback", "value": "Positive" }
+  ],
+  "learnings": [
+    "Small experiments are faster and safer than long design documents when documentation is missing.",
+    "Wrap write operations with strict checks; legacy systems often fail silently.",
+    "Document discoveries immediately — future maintenance depends on concise notes and examples."
+  ],
+  "testimonial": {
+    "quote": "The automation scripts Stefano provided turned manual, error-prone reporting into a reliable, repeatable process with no downtime.",
+    "author": "Process Owner, Client",
+    "role": "Business Process Owner"
+  }
+}

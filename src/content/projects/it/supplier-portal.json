@@ -1,0 +1,68 @@
+{
+  "slug": "supplier-portal",
+  "locale": "it",
+  "title": "Portale fornitori enterprise",
+  "subtitle": "Modernizzazione frontend per una piattaforma multi-servizio",
+  "period": "Lug - Presente",
+  "overview": "Ho guidato il lavoro frontend per un portale fornitori usato da più team. Abbiamo consolidato varie app React in JavaScript in un unico codebase TypeScript, migliorando i flussi di lavoro degli sviluppatori e rendendo l'interfaccia più prevedibile per utenti e integrazioni.",
+  "challenge": "Il portale era cresciuto in modo organico su molteplici repository. I team duplicavano codice, i pattern non erano allineati e la copertura TypeScript era bassa. Questo rallentava le modifiche, introdusse bug e rendeva l'onboarding più difficile.",
+  "solution": "Abbiamo adottato un'architettura frontend centralizzata basata su React + TypeScript e una libreria di componenti condivisa. Ho introdotto pattern coerenti per lo stato e l'integrazione API, creato un percorso di migrazione incrementale per i servizi e aggiunto test e automazioni per ridurre i regressi.",
+  "keyAchievements": [
+    {
+      "title": "Libreria di componenti condivisa",
+      "description": "Costruita una libreria leggera e documentata che ha sostituito codice UI duplicato, uniformando le interfacce tra i servizi."
+    },
+    {
+      "title": "Migrazione incrementale",
+      "description": "Trasferimento graduale dei servizi a TypeScript e alla nuova architettura per evitare riscritture massive e ridurre i rischi."
+    },
+    {
+      "title": "Sviluppatore esperienza",
+      "description": "Standardizzati linting, controlli CI e strumenti locali per velocizzare l'onboarding e ridurre errori quotidiani."
+    },
+    {
+      "title": "Astrazione dei servizi",
+      "description": "Creati strati chiari per l'integrazione API così che i frontend possano usare più servizi senza duplicare logica di business."
+    },
+    {
+      "title": "Ottimizzazione performance",
+      "description": "Ridotto bundle size, introdotto code-splitting e lazy loading nelle aree critiche per migliorare la velocità percepita."
+    }
+  ],
+  "technologies": [
+    { "name": "React", "proficiency": "Expert" },
+    { "name": "TypeScript", "proficiency": "Expert" },
+    { "name": "Vite", "proficiency": "Avanzato" },
+    { "name": "TanStack Query", "proficiency": "Avanzato" },
+    { "name": "gRPC / REST", "proficiency": "Avanzato" },
+    { "name": "Playwright", "proficiency": "Intermedio" }
+  ],
+  "techStack": {
+    "title": "Stack tecnologico",
+    "items": [
+      {
+        "category": "Frontend",
+        "items": ["React", "TypeScript", "Vite", "TailwindCSS"]
+      },
+      { "category": "Stato & Dati", "items": ["TanStack Query", "Zustand"] },
+      { "category": "APIs", "items": ["gRPC", "REST", "OpenAPI"] },
+      { "category": "Infra", "items": ["Docker", "Kubernetes", "AWS"] },
+      {
+        "category": "Testing",
+        "items": ["Vitest", "Playwright", "React Testing Library"]
+      }
+    ]
+  },
+  "metrics": [
+    { "label": "Servizi integrati", "value": "10+" },
+    { "label": "Copertura TypeScript", "value": "100%" },
+    { "label": "Riduzione bundle", "value": "35%" },
+    { "label": "Tempo di caricamento", "value": "-45%" }
+  ],
+  "learnings": [
+    "TypeScript fa risparmiare tempo: non risolve tutto, ma evita molti errori.",
+    "Componenti piccoli e documentati aiutano più di grandi framework personalizzati.",
+    "La migrazione incrementale permette di migliorare il codice senza bloccare il business.",
+    "Progettare le API pensando al frontend semplifica molto l'orchestrazione."
+  ]
+}

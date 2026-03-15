@@ -1,0 +1,65 @@
+{
+  "slug": "pim-modernization",
+  "locale": "it",
+  "title": "Modernizzazione frontend PIM",
+  "subtitle": "Da librerie UI sparse a un sistema di design unico e sostenibile",
+  "period": "Gen - Apr 2024",
+  "overview": "Ho riscritto il frontend del PIM per smettere di lottare contro la UI. Nel tempo l'app aveva accumulato Material UI, Chakra e molti componenti custom: il risultato era incoerenza visiva e sviluppo rallentato. Ho sostituito tutto con un design system basato su ShadcnUI, ho ripulito le interazioni e ho reso le operazioni quotidiane più rapide per chi lavora sul prodotto.",
+  "challenge": "Team diversi avevano aggiunto librerie UI ad-hoc. Pulsanti e form si comportavano in modo diverso a seconda della pagina, e le piccole differenze causavano continue correzioni. Il frontend era difficile da mantenere e rilasciare nuove funzionalità richiedeva troppo lavoro manuale.",
+  "solution": "Ho scelto ShadcnUI come base pratica e accessibile e ho riscritto prima i componenti più usati. Il lavoro ha incluso una component library, design token, impostazioni accessibili di default e un piano di migrazione per rilasciare i cambiamenti per fasi. Mi sono concentrato sui flussi principali: multi-select, bulk edit, editing inline e anteprime media.",
+  "keyAchievements": [
+    {
+      "title": "Un unico sistema di design",
+      "description": "Sostituiti più framework UI con una libreria di componenti ShadcnUI: i componenti si comportano uguali ovunque."
+    },
+    {
+      "title": "Meno sorprese per gli utenti",
+      "description": "Standardizzati controlli, stati di caricamento e gestione errori: gli editor fanno meno controlli manuali e recuperano più velocemente dagli errori."
+    },
+    {
+      "title": "Operazioni dati più veloci",
+      "description": "Aggiunti multi-select, bulk edit e editing inline per ridurre il lavoro ripetitivo degli utenti avanzati."
+    },
+    {
+      "title": "Gestione media efficace",
+      "description": "Implementate anteprime immagine e PDF nel PIM per controllare i media prima della pubblicazione, riducendo upload errati."
+    },
+    {
+      "title": "Codebase più pulita",
+      "description": "Refactor e documentazione dei componenti per rendere le modifiche future più sicure e rapide."
+    }
+  ],
+  "technologies": [
+    { "name": "React", "proficiency": "Expert" },
+    { "name": "TypeScript", "proficiency": "Expert" },
+    { "name": "ShadcnUI", "proficiency": "Avanzato" },
+    { "name": "Tailwind CSS", "proficiency": "Avanzato" },
+    { "name": "Go", "proficiency": "Intermedio" },
+    { "name": "Neo4j", "proficiency": "Intermedio" }
+  ],
+  "techStack": {
+    "title": "Stack tecnologico",
+    "items": [
+      {
+        "category": "Frontend",
+        "items": ["React", "TypeScript", "ShadcnUI", "Tailwind CSS"]
+      },
+      { "category": "Styling", "items": ["Tailwind CSS", "CSS Modules"] },
+      { "category": "State", "items": ["React Hooks", "Context API"] },
+      { "category": "Backend", "items": ["Go", "gRPC"] },
+      { "category": "Database", "items": ["Neo4j", "Cypher"] }
+    ]
+  },
+  "metrics": [
+    { "label": "Varianti componenti rimosse", "value": "40%" },
+    { "label": "Tempo sviluppo risparmiato", "value": "~25%" },
+    { "label": "Coerenza UI", "value": "Alta" },
+    { "label": "Nuove funzionalità editor", "value": "7+" }
+  ],
+  "learnings": [
+    "Un unico sistema di design riduce le frizioni più di qualsiasi singola libreria.",
+    "Rilasciare prima la parte più piccola e coerente semplifica la migrazione completa.",
+    "Accessibilità e default sensati risparmiano tempo in seguito; vale la pena investirci subito.",
+    "Ascoltare gli editor: piccoli miglioramenti UX spesso eliminano ore di lavoro ripetitivo."
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "slug": "backend-modernization",
+  "locale": "it",
+  "title": "Modernizzazione backend mobile",
+  "subtitle": "Riscrittura in Kotlin + Spring Boot con architettura esagonale",
+  "period": "Ott - Dic 2024",
+  "overview": "Ho riscritto il backend di un'app mobile KMP, passando da Java + MyBatis a Kotlin + Spring Boot. L'obiettivo era concreto: semplificare le modifiche, ridurre i bug a runtime e rendere il codice più leggibile. La riscrittura ha ridotto il boilerplate e reso il lavoro quotidiano più fluido.",
+  "challenge": "Il vecchio backend portava con sé anni di patch: logica di business sparsa tra mapper MyBatis, dialetti diversi per database e upgrade delicati. Anche piccole modifiche potevano avere effetti a catena. Risolvere bug era lento e rischioso.",
+  "solution": "Ho scelto Kotlin e Spring Boot con Kotlin Exposed. Ho strutturato il codice in moduli testabili e ho applicato l'architettura esagonale: la logica sta al centro, gli adapter gestiscono I/O. I test unitari sono diventati più semplici e le modifiche al DB più sicure.",
+  "keyAchievements": [
+    {
+      "title": "Codice più pulito",
+      "description": "La migrazione a Kotlin ha ridotto il boilerplate, migliorato il trattamento dei null e reso le API più espressive — si lavora molto meglio."
+    },
+    {
+      "title": "Accesso DB più sicuro",
+      "description": "Ho sostituito MyBatis con Kotlin Exposed per avere controlli a compile-time sulle query e meno sorprese a runtime."
+    },
+    {
+      "title": "Architettura esagonale",
+      "description": "Separando regole di business e I/O, ho potuto eseguire test senza avviare database pesanti."
+    },
+    {
+      "title": "Compatibilità multi-database",
+      "description": "Abbiamo mantenuto il supporto per MySQL, Oracle e SQL Server usando un unico layer di accesso ai dati."
+    },
+    {
+      "title": "Qualità pratica",
+      "description": "Ho introdotto gestione errori coerente, logging migliore e test d'integrazione con Testcontainers — cose che semplificano il debugging."
+    }
+  ],
+  "technologies": [
+    { "name": "Kotlin", "proficiency": "Esperto" },
+    { "name": "Spring Boot", "proficiency": "Esperto" },
+    { "name": "Kotlin Exposed", "proficiency": "Avanzato" },
+    { "name": "PostgreSQL", "proficiency": "Avanzato" },
+    { "name": "Oracle DB", "proficiency": "Intermedio" },
+    { "name": "SQL Server", "proficiency": "Intermedio" }
+  ],
+  "techStack": {
+    "title": "Stack tecnologico",
+    "items": [
+      {
+        "category": "Backend",
+        "items": ["Kotlin", "Spring Boot", "Coroutines"]
+      },
+      { "category": "ORM", "items": ["Kotlin Exposed", "Spring Data"] },
+      {
+        "category": "Database",
+        "items": ["PostgreSQL", "MySQL", "Oracle", "SQL Server"]
+      },
+      { "category": "API", "items": ["REST", "Serialization", "Validation"] },
+      {
+        "category": "Testing",
+        "items": ["JUnit 5", "Testcontainers", "MockK"]
+      },
+      { "category": "DevOps", "items": ["Docker", "Flyway"] }
+    ]
+  },
+  "metrics": [
+    { "label": "Meno boilerplate", "value": "≈40%" },
+    { "label": "Coverage test", "value": "85%+" },
+    { "label": "DB supportati", "value": "3" },
+    { "label": "Miglioramento perf.", "value": "+15%" }
+  ],
+  "learnings": [
+    "Convenzioni semplici e opinative aiutano quando ci sono più database.",
+    "Confini chiari tra dominio e adapter riducono i rischi durante i refactor.",
+    "Le query type-safe fanno risparmiare tempo: l'IDE rileva molti errori prima che vengano eseguiti.",
+    "Mantenere compatibilità con i sistemi legacy è spesso più importante di una riscrittura radicale."
+  ]
+}
