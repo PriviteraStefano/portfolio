@@ -1,0 +1,235 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { getLangFromUrl } from "../../../i18n/utils";
+
+export async function getStaticPaths() {
+  return [
+    { params: { locale: 'en' } },
+    { params: { locale: 'it' } },
+  ];
+}
+
+const locale = getLangFromUrl(Astro.url);
+
+const content = {
+  en: {
+    title: "Enterprise Supplier Portal",
+    subtitle: "Frontend modernization of multi-service supplier management platform",
+    period: "Jul - Present",
+    overview: "Led frontend architecture and development for a comprehensive supplier management platform for major equipment manufacturer. Transformed chaotic multi-repository React codebase with JavaScript into a unified, type-safe React + TypeScript system.",
+    challenge: "The portal had grown organically across multiple teams with inconsistent patterns, poor TypeScript adoption, minimal code organization, and scattered business logic. Managing 10+ different services with duplicated code and patterns became increasingly difficult.",
+    solution: "Implemented centralized frontend architecture using React + TypeScript with clear separation of concerns. Established component library, shared utilities, and consistent patterns across all services. Structured state management and API integration layers for maintainability.",
+    keyAchievements: [
+      {
+        title: "Full Frontend Architecture",
+        description: "Designed and implemented complete frontend stack managing service requests, invoicing, deliveries, parts management, machine tracking, notifications, and reporting."
+      },
+      {
+        title: "Codebase Modernization",
+        description: "Migrated from scattered React + JavaScript to unified React + TypeScript bringing type safety, better developer experience, and reduced bugs."
+      },
+      {
+        title: "Multi-Service Orchestration",
+        description: "Built consistent frontend that abstracts multiple backend services, gRPC APIs, and complex business logic into unified user experience."
+      },
+      {
+        title: "Brand Consistency",
+        description: "Maintained strict brand identity across all service interfaces with component library and design tokens."
+      },
+      {
+        title: "Performance & Scalability",
+        description: "Optimized bundle sizes, implemented code splitting, lazy loading, and efficient state management for large-scale application."
+      }
+    ],
+    technologies: [
+      { name: "React", proficiency: "Expert" },
+      { name: "TypeScript", proficiency: "Expert" },
+      { name: "Node.js", proficiency: "Advanced" },
+      { name: "gRPC", proficiency: "Advanced" },
+      { name: "Java Spring Boot", proficiency: "Intermediate" },
+      { name: "PostgreSQL", proficiency: "Intermediate" },
+    ],
+    techStack: {
+      title: "Technical Stack",
+      items: [
+        { category: "Frontend", items: ["React", "TypeScript", "Vite", "TailwindCSS"] },
+        { category: "State Management", items: ["TanStack Query", "Zustand"] },
+        { category: "Backend APIs", items: ["gRPC", "REST APIs", "OpenAPI"] },
+        { category: "Infrastructure", items: ["Docker", "Kubernetes", "AWS"] },
+        { category: "Development", items: ["Vitest", "React Testing Library", "Playwright"] },
+      ]
+    },
+    metrics: [
+      { label: "Services Integrated", value: "10+" },
+      { label: "TypeScript Coverage", value: "100%" },
+      { label: "Bundle Size Reduction", value: "35%" },
+      { label: "Page Load Time", value: "-45%" },
+    ]
+  },
+  it: {
+    title: "Portale Fornitori Enterprise",
+    subtitle: "Modernizzazione frontend piattaforma gestione fornitori multi-servizio",
+    period: "Lug - Presente",
+    overview: "Ho guidato architettura frontend e sviluppo per piattaforma completa gestione fornitori per grande produttore attrezzature. Ho trasformato codebase React caotico multi-repository con JavaScript in sistema unificato, type-safe React + TypeScript.",
+    challenge: "Il portale era cresciuto organicamente su multiple team con pattern inconsistenti, poor TypeScript adoption, minimal code organization, business logic sparso. Gestire 10+ servizi diversi con codice e pattern duplicati è diventato sempre più difficile.",
+    solution: "Ho implementato architettura frontend centralizzata usando React + TypeScript con clear separation of concerns. Ho stabilito component library, shared utilities, pattern consistenti su tutti i servizi. Ho strutturato state management e API integration layers per maintainability.",
+    keyAchievements: [
+      {
+        title: "Architettura Frontend Completa",
+        description: "Ho progettato e implementato complete stack frontend gestendo richieste servizio, fatturazione, consegne, gestione ricambi, tracking macchine, notifiche, reporting."
+      },
+      {
+        title: "Modernizzazione Codebase",
+        description: "Ho migrato da scattered React + JavaScript a unified React + TypeScript portando type safety, miglior developer experience, ridotto bugs."
+      },
+      {
+        title: "Orchestrazione Multi-Servizio",
+        description: "Ho costruito frontend consistente che astrae multiple backend services, gRPC APIs, complex business logic in unified user experience."
+      },
+      {
+        title: "Brand Consistency",
+        description: "Ho mantenuto identità brand rigorosa su tutte le interfacce servizio con component library e design tokens."
+      },
+      {
+        title: "Performance & Scalabilità",
+        description: "Ho ottimizzato bundle sizes, implementato code splitting, lazy loading, efficient state management per large-scale application."
+      }
+    ],
+    technologies: [
+      { name: "React", proficiency: "Expert" },
+      { name: "TypeScript", proficiency: "Expert" },
+      { name: "Node.js", proficiency: "Avanzato" },
+      { name: "gRPC", proficiency: "Avanzato" },
+      { name: "Java Spring Boot", proficiency: "Intermedio" },
+      { name: "PostgreSQL", proficiency: "Intermedio" },
+    ],
+    techStack: {
+      title: "Stack Tecnologico",
+      items: [
+        { category: "Frontend", items: ["React", "TypeScript", "Vite", "TailwindCSS"] },
+        { category: "State Management", items: ["TanStack Query", "Zustand"] },
+        { category: "Backend APIs", items: ["gRPC", "REST APIs", "OpenAPI"] },
+        { category: "Infrastructure", items: ["Docker", "Kubernetes", "AWS"] },
+        { category: "Sviluppo", items: ["Vitest", "React Testing Library", "Playwright"] },
+      ]
+    },
+    metrics: [
+      { label: "Servizi Integrati", value: "10+" },
+      { label: "Copertura TypeScript", value: "100%" },
+      { label: "Riduzione Bundle Size", value: "35%" },
+      { label: "Page Load Time", value: "-45%" },
+    ]
+  }
+};
+
+const page = content[locale];
+---
+
+<BaseLayout>
+  <div class="min-h-screen bg-primary dark:bg-secondary text-secondary dark:text-primary">
+    <!-- Hero Section -->
+    <div class="max-w-4xl mx-auto px-8 py-20">
+      <div class="mb-4">
+        <span class="text-sm font-medium text-secondary/60 dark:text-primary/60">{page.period}</span>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">{page.title}</h1>
+      <p class="text-xl text-secondary/80 dark:text-primary/80 mb-8">{page.subtitle}</p>
+      <p class="text-lg leading-relaxed text-secondary/75 dark:text-primary/75">{page.overview}</p>
+    </div>
+
+    <!-- Challenge & Solution -->
+    <div class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20">
+      <div class="grid md:grid-cols-2 gap-12">
+        <div>
+          <h2 class="text-2xl font-semibold mb-4">{locale === 'it' ? 'Sfida' : 'Challenge'}</h2>
+          <p class="text-secondary/75 dark:text-primary/75 leading-relaxed">{page.challenge}</p>
+        </div>
+        <div>
+          <h2 class="text-2xl font-semibold mb-4">{locale === 'it' ? 'Soluzione' : 'Solution'}</h2>
+          <p class="text-secondary/75 dark:text-primary/75 leading-relaxed">{page.solution}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Key Achievements -->
+    <div class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20">
+      <h2 class="text-3xl font-semibold mb-8">{locale === 'it' ? 'Risultati Chiave' : 'Key Achievements'}</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        {page.keyAchievements.map((achievement) => (
+          <div class="border-l-2 border-secondary/30 dark:border-primary/30 pl-6 py-2">
+            <h3 class="text-lg font-semibold mb-2">{achievement.title}</h3>
+            <p class="text-secondary/70 dark:text-primary/70 text-sm leading-relaxed">{achievement.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Metrics -->
+    <div class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20">
+      <h2 class="text-3xl font-semibold mb-8">{locale === 'it' ? 'Impatto' : 'Impact'}</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        {page.metrics.map((metric) => (
+          <div class="text-center">
+            <p class="text-4xl font-bold text-secondary dark:text-primary mb-2">{metric.value}</p>
+            <p class="text-sm text-secondary/60 dark:text-primary/60">{metric.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Tech Stack -->
+    <div class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20">
+      <h2 class="text-3xl font-semibold mb-8">{page.techStack.title}</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        {page.techStack.items.map((section) => (
+          <div>
+            <h3 class="font-semibold text-lg mb-3 text-secondary dark:text-primary">{section.category}</h3>
+            <div class="flex flex-wrap gap-2">
+              {section.items.map((item) => (
+                <span class="px-3 py-1 text-sm bg-secondary/10 dark:bg-primary/10 rounded-full text-secondary dark:text-primary">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Technologies -->
+    <div class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20">
+      <h2 class="text-3xl font-semibold mb-8">{locale === 'it' ? 'Tecnologie Usate' : 'Technologies Used'}</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        {page.technologies.map((tech) => (
+          <div class="p-4 border border-secondary/20 dark:border-primary/20 rounded-lg">
+            <p class="font-medium text-secondary dark:text-primary">{tech.name}</p>
+            <p class="text-sm text-secondary/60 dark:text-primary/60">{tech.proficiency}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Learnings -->
+    <div class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20 mb-20">
+      <h2 class="text-3xl font-semibold mb-4">{locale === 'it' ? 'Lezioni Chiave' : 'Key Learnings'}</h2>
+      <ul class="space-y-3 text-secondary/75 dark:text-primary/75">
+        <li class="flex gap-3">
+          <span class="text-secondary dark:text-primary">▸</span>
+          <span>{locale === 'it' ? 'TypeScript porta enorme valore anche in grossi progetti React existing' : 'TypeScript brings enormous value even in large existing React projects'}</span>
+        </li>
+        <li class="flex gap-3">
+          <span class="text-secondary dark:text-primary">▸</span>
+          <span>{locale === 'it' ? 'Consistent patterns e component library moltiplicano productivity' : 'Consistent patterns and component library multiply productivity'}</span>
+        </li>
+        <li class="flex gap-3">
+          <span class="text-secondary dark:text-primary">▸</span>
+          <span>{locale === 'it' ? 'Orchestrare multiple backend services richiede attenta API design' : 'Orchestrating multiple backend services requires careful API design'}</span>
+        </li>
+        <li class="flex gap-3">
+          <span class="text-secondary dark:text-primary">▸</span>
+          <span>{locale === 'it' ? 'Brand consistency abilita confidence e professionalità' : 'Brand consistency enables confidence and professionalism'}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</BaseLayout>

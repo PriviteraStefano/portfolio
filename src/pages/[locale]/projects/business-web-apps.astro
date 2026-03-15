@@ -1,0 +1,237 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { getLangFromUrl } from "../../../i18n/utils";
+
+export async function getStaticPaths() {
+  return [
+    { params: { locale: 'en' } },
+    { params: { locale: 'it' } },
+  ];
+}
+
+const locale = getLangFromUrl(Astro.url);
+
+const content = {
+  en: {
+    title: "JDE to Web Business Applications",
+    subtitle: "Modernization of legacy business processes with React and Java",
+    period: "Feb - Jun 2024",
+    overview: "Built modern web applications replacing legacy JDE business processes. Developed data-heavy frontends with advanced filtering, sorting, and exporting capabilities. Mentored team members in React and TypeScript best practices.",
+    challenge: "Multiple critical business processes relied on legacy JDE interfaces that were difficult to use, lacked modern UX patterns, and couldn't scale with business growth. Users demanded more flexible interfaces with better data visualization and export capabilities.",
+    solution: "Developed modern React + TypeScript frontend with Java + Spring Boot backend. Built configurable data grids supporting dynamic columns, calculated values, filtering, sorting, and multi-format exports (CSV, Excel, PDF). Used gRPC for high-performance client-server communication.",
+    keyAchievements: [
+      {
+        title: "Advanced Data Grids",
+        description: "Built flexible, configurable data grids with dynamic columns, real-time filtering and sorting, calculated values, and proper pagination for large datasets."
+      },
+      {
+        title: "Multi-Format Export",
+        description: "Implemented CSV, Excel, and PDF export functionality preserving formatting, calculated values, and metadata from complex JDE data structures."
+      },
+      {
+        title: "gRPC Integration",
+        description: "Designed and implemented gRPC communication between frontend and backend enabling high-performance data transfer and type-safe APIs."
+      },
+      {
+        title: "Team Mentoring",
+        description: "Successfully mentored junior developer in React and TypeScript, establishing best practices and design patterns for team adoption."
+      },
+      {
+        title: "Legacy System Migration",
+        description: "Smooth transition from XML-based UI to modern web architecture maintaining full feature parity while improving performance and UX."
+      }
+    ],
+    technologies: [
+      { name: "React", proficiency: "Expert" },
+      { name: "TypeScript", proficiency: "Expert" },
+      { name: "Java", proficiency: "Advanced" },
+      { name: "Spring Boot", proficiency: "Advanced" },
+      { name: "gRPC", proficiency: "Advanced" },
+      { name: "PostgreSQL", proficiency: "Intermediate" },
+    ],
+    techStack: {
+      title: "Technical Stack",
+      items: [
+        { category: "Frontend", items: ["React", "TypeScript", "Tanstack Table", "AG Grid"] },
+        { category: "Styling & Components", items: ["TailwindCSS", "Shadcn UI"] },
+        { category: "Backend", items: ["Java", "Spring Boot", "Spring Data"] },
+        { category: "APIs", items: ["gRPC", "Protocol Buffers", "REST APIs"] },
+        { category: "Data Export", items: ["XLSX Library", "PDF Lib", "CSV Generation"] },
+        { category: "DevOps", items: ["Docker", "Kubernetes"] },
+      ]
+    },
+    metrics: [
+      { label: "Features Migrated", value: "15+" },
+      { label: "Data Grid Performance", value: "10K+ rows" },
+      { label: "Export Formats", value: "3" },
+      { label: "Development Time", value: "-50% vs legacy" },
+    ]
+  },
+  it: {
+    title: "Applicazioni Web JDE a Modernezza",
+    subtitle: "Modernizzazione processi business legacy con React e Java",
+    period: "Feb - Giu 2024",
+    overview: "Ho costruito applicazioni web moderne rimpiazzando processi business legacy JDE. Ho sviluppato frontend data-heavy con advanced filtering, sorting, export capabilities. Ho mentored team members in React e TypeScript best practices.",
+    challenge: "Multiple processi business critici si basavano su interfacce legacy JDE difficili usare, mancavano modern UX patterns, non potevano scalare con business growth. Users richiedevano interfacce più flessibili con migliore data visualization e export capabilities.",
+    solution: "Ho sviluppato frontend moderno React + TypeScript con backend Java + Spring Boot. Ho costruito configurable data grids supportando dynamic columns, calculated values, filtering, sorting, multi-format exports (CSV, Excel, PDF). Ho usato gRPC per high-performance client-server communication.",
+    keyAchievements: [
+      {
+        title: "Advanced Data Grids",
+        description: "Ho costruito flessibili, configurable data grids con dynamic columns, real-time filtering e sorting, calculated values, proper pagination per large datasets."
+      },
+      {
+        title: "Multi-Format Export",
+        description: "Ho implementato CSV, Excel, PDF export functionality preservando formatting, calculated values, metadata da complex JDE data structures."
+      },
+      {
+        title: "Integrazione gRPC",
+        description: "Ho progettato e implementato gRPC communication tra frontend e backend abilitando high-performance data transfer e type-safe APIs."
+      },
+      {
+        title: "Team Mentoring",
+        description: "Ho successfully mentored junior developer in React e TypeScript, stabilendo best practices e design patterns per team adoption."
+      },
+      {
+        title: "Migrazione Sistema Legacy",
+        description: "Smooth transition da XML-based UI a modern web architecture mantenendo full feature parity migliorando performance e UX."
+      }
+    ],
+    technologies: [
+      { name: "React", proficiency: "Expert" },
+      { name: "TypeScript", proficiency: "Expert" },
+      { name: "Java", proficiency: "Avanzato" },
+      { name: "Spring Boot", proficiency: "Avanzato" },
+      { name: "gRPC", proficiency: "Avanzato" },
+      { name: "PostgreSQL", proficiency: "Intermedio" },
+    ],
+    techStack: {
+      title: "Stack Tecnologico",
+      items: [
+        { category: "Frontend", items: ["React", "TypeScript", "Tanstack Table", "AG Grid"] },
+        { category: "Styling & Components", items: ["TailwindCSS", "Shadcn UI"] },
+        { category: "Backend", items: ["Java", "Spring Boot", "Spring Data"] },
+        { category: "APIs", items: ["gRPC", "Protocol Buffers", "REST APIs"] },
+        { category: "Data Export", items: ["XLSX Library", "PDF Lib", "CSV Generation"] },
+        { category: "DevOps", items: ["Docker", "Kubernetes"] },
+      ]
+    },
+    metrics: [
+      { label: "Features Migrati", value: "15+" },
+      { label: "Performance Data Grid", value: "10K+ rows" },
+      { label: "Export Formats", value: "3" },
+      { label: "Development Time", value: "-50% vs legacy" },
+    ]
+  }
+};
+
+const page = content[locale];
+---
+
+<BaseLayout>
+  <div class="min-h-screen bg-primary dark:bg-secondary text-secondary dark:text-primary">
+    <!-- Hero Section -->
+    <div class="max-w-4xl mx-auto px-8 py-20">
+      <div class="mb-4">
+        <span class="text-sm font-medium text-secondary/60 dark:text-primary/60">{page.period}</span>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">{page.title}</h1>
+      <p class="text-xl text-secondary/80 dark:text-primary/80 mb-8">{page.subtitle}</p>
+      <p class="text-lg leading-relaxed text-secondary/75 dark:text-primary/75">{page.overview}</p>
+    </div>
+
+    <!-- Challenge & Solution -->
+    <div class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20">
+      <div class="grid md:grid-cols-2 gap-12">
+        <div>
+          <h2 class="text-2xl font-semibold mb-4">{locale === 'it' ? 'Sfida' : 'Challenge'}</h2>
+          <p class="text-secondary/75 dark:text-primary/75 leading-relaxed">{page.challenge}</p>
+        </div>
+        <div>
+          <h2 class="text-2xl font-semibold mb-4">{locale === 'it' ? 'Soluzione' : 'Solution'}</h2>
+          <p class="text-secondary/75 dark:text-primary/75 leading-relaxed">{page.solution}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Key Achievements -->
+    <div class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20">
+      <h2 class="text-3xl font-semibold mb-8">{locale === 'it' ? 'Risultati Chiave' : 'Key Achievements'}</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        {page.keyAchievements.map((achievement) => (
+          <div class="border-l-2 border-secondary/30 dark:border-primary/30 pl-6 py-2">
+            <h3 class="text-lg font-semibold mb-2">{achievement.title}</h3>
+            <p class="text-secondary/70 dark:text-primary/70 text-sm leading-relaxed">{achievement.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Metrics -->
+    <div class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20">
+      <h2 class="text-3xl font-semibold mb-8">{locale === 'it' ? 'Impatto' : 'Impact'}</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        {page.metrics.map((metric) => (
+          <div class="text-center">
+            <p class="text-4xl font-bold text-secondary dark:text-primary mb-2">{metric.value}</p>
+            <p class="text-sm text-secondary/60 dark:text-primary/60">{metric.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Tech Stack -->
+    <div class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20">
+      <h2 class="text-3xl font-semibold mb-8">{page.techStack.title}</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        {page.techStack.items.map((section) => (
+          <div>
+            <h3 class="font-semibold text-lg mb-3 text-secondary dark:text-primary">{section.category}</h3>
+            <div class="flex flex-wrap gap-2">
+              {section.items.map((item) => (
+                <span class="px-3 py-1 text-sm bg-secondary/10 dark:bg-primary/10 rounded-full text-secondary dark:text-primary">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Technologies -->
+    <div class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20">
+      <h2 class="text-3xl font-semibold mb-8">{locale === 'it' ? 'Tecnologie Usate' : 'Technologies Used'}</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        {page.technologies.map((tech) => (
+          <div class="p-4 border border-secondary/20 dark:border-primary/20 rounded-lg">
+            <p class="font-medium text-secondary dark:text-primary">{tech.name}</p>
+            <p class="text-sm text-secondary/60 dark:text-primary/60">{tech.proficiency}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Learnings -->
+    <div class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20 mb-20">
+      <h2 class="text-3xl font-semibold mb-4">{locale === 'it' ? 'Lezioni Chiave' : 'Key Learnings'}</h2>
+      <ul class="space-y-3 text-secondary/75 dark:text-primary/75">
+        <li class="flex gap-3">
+          <span class="text-secondary dark:text-primary">▸</span>
+          <span>{locale === 'it' ? 'Data-heavy applications beneficiano enormemente da modern components libraries come AG Grid' : 'Data-heavy applications benefit enormously from modern components libraries like AG Grid'}</span>
+        </li>
+        <li class="flex gap-3">
+          <span class="text-secondary dark:text-primary">▸</span>
+          <span>{locale === 'it' ? 'gRPC fornisce performant, type-safe communication per data-intensive applications' : 'gRPC provides performant, type-safe communication for data-intensive applications'}</span>
+        </li>
+        <li class="flex gap-3">
+          <span class="text-secondary dark:text-primary">▸</span>
+          <span>{locale === 'it' ? 'Mentoring è una responsabilità che porta benefici long-term al team' : 'Mentoring is a responsibility that brings long-term benefits to the team'}</span>
+        </li>
+        <li class="flex gap-3">
+          <span class="text-secondary dark:text-primary">▸</span>
+          <span>{locale === 'it' ? 'Legacy system migration require careful planning per mantenere feature parity' : 'Legacy system migration requires careful planning to maintain feature parity'}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</BaseLayout>

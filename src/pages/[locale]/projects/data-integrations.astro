@@ -1,0 +1,237 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { getLangFromUrl } from "../../../i18n/utils";
+
+export async function getStaticPaths() {
+  return [
+    { params: { locale: 'en' } },
+    { params: { locale: 'it' } },
+  ];
+}
+
+const locale = getLangFromUrl(Astro.url);
+
+const content = {
+  en: {
+    title: "ETL Pipelines & System Integrations",
+    subtitle: "Data synchronization between enterprise systems with modular architecture",
+    period: "Throughout 2024-2025",
+    overview: "Designed and implemented multiple data synchronization pipelines integrating disparate enterprise systems. Developed reusable client libraries and configurable ETL frameworks that enable flexible field mapping and data transformations.",
+    challenge: "Multiple enterprise systems operate in silos: SAP SuccessFactors for HR, ARIS for process automation, NetSuite for ERP, and internal PIM. Data consistency across these systems is critical but integrations were ad-hoc and fragile. New integrations required starting from scratch each time.",
+    solution: "Built modular ETL architecture with three layers: reusable service client libraries, configurable transformation engine using Expr for dynamic field mapping, and orchestration pipeline. Each component is independently versioned and released, enabling parallel development and easy testing.",
+    keyAchievements: [
+      {
+        title: "Real-time Data Synchronization",
+        description: "Built SAP SuccessFactors ↔ ARIS pipeline with Kubernetes-based cron orchestration enabling near real-time data consistency across HR and process automation systems."
+      },
+      {
+        title: "Flexible Field Mapping",
+        description: "Implemented Expr-based configuration enabling complex field transformations without code changes. Supports computed fields, conditional logic, and data format conversions."
+      },
+      {
+        title: "Modular Libraries",
+        description: "Created reusable Go libraries for NetSuite, PIM, and ARIS clients with independent versioning. Enables rapid integration with new systems."
+      },
+      {
+        title: "Production Reliability",
+        description: "Built with comprehensive error handling, retry logic, and observability. Handles data validation, conflict resolution, and graceful degradation."
+      },
+      {
+        title: "Scalable Architecture",
+        description: "Pipeline architecture scales horizontally and supports multiple concurrent synchronizations without cross-contamination."
+      }
+    ],
+    technologies: [
+      { name: "Go", proficiency: "Expert" },
+      { name: "Kotlin", proficiency: "Advanced" },
+      { name: "gRPC", proficiency: "Advanced" },
+      { name: "PostgreSQL", proficiency: "Advanced" },
+      { name: "Kubernetes", proficiency: "Intermediate" },
+      { name: "SAP APIs", proficiency: "Intermediate" },
+    ],
+    techStack: {
+      title: "Technical Stack",
+      items: [
+        { category: "Languages", items: ["Go", "Kotlin", "YAML"] },
+        { category: "Platforms", items: ["Kubernetes", "Docker", "Linux"] },
+        { category: "Protocols", items: ["gRPC", "REST APIs", "OAuth2"] },
+        { category: "Data Processing", items: ["Expr", "JSON Schema"] },
+        { category: "Storage", items: ["PostgreSQL", "Redis"] },
+        { category: "DevOps", items: ["Docker Compose", "GitHub Actions"] },
+      ]
+    },
+    metrics: [
+      { label: "Systems Integrated", value: "4+" },
+      { label: "Data Sync Frequency", value: "Real-time" },
+      { label: "Field Mapping Options", value: "100+" },
+      { label: "Pipeline Success Rate", value: ">99.5%" },
+    ]
+  },
+  it: {
+    title: "Pipeline ETL & Integrazioni di Sistema",
+    subtitle: "Sincronizzazione dati tra sistemi enterprise con architettura modulare",
+    period: "Durante 2024-2025",
+    overview: "Ho progettato e implementato multiple pipeline sincronizzazione dati integrando sistemi enterprise disparati. Ho sviluppato librerie client riutilizzabili e framework ETL configurabili che abilitano flexible field mapping e data transformations.",
+    challenge: "Multiple sistemi enterprise operano in silos: SAP SuccessFactors per HR, ARIS per automazione processi, NetSuite per ERP, e PIM interno. Consistenza dati su questi sistemi è critica ma integrazioni erano ad-hoc e fragili. Nuove integrazioni richiedevano ricominciare da zero ogni volta.",
+    solution: "Ho costruito architettura ETL modulare con tre livelli: librerie client servizio riutilizzabili, transformation engine configurabile usando Expr per dynamic field mapping, e pipeline orchestrazione. Ogni componente è indipendentemente versionato e rilasciato, abilitando sviluppo parallelo e testing facile.",
+    keyAchievements: [
+      {
+        title: "Sincronizzazione Dati Real-time",
+        description: "Ho costruito pipeline SAP SuccessFactors ↔ ARIS con orchestrazione cron Kubernetes-based abilitando near real-time data consistency su sistemi HR e process automation."
+      },
+      {
+        title: "Flexible Field Mapping",
+        description: "Ho implementato configurazione Expr-based abilitando complex field transformations senza code changes. Supporta computed fields, conditional logic, data format conversions."
+      },
+      {
+        title: "Librerie Modulari",
+        description: "Ho creato librerie Go riutilizzabili per NetSuite, PIM, ARIS clients con versionamento indipendente. Abilita integrazione rapida con nuovi sistemi."
+      },
+      {
+        title: "Affidabilità Produzione",
+        description: "Ho costruito con comprehensive error handling, retry logic, observability. Gestisce data validation, conflict resolution, graceful degradation."
+      },
+      {
+        title: "Architettura Scalabile",
+        description: "Architettura pipeline scala horizontally e supporta multiple concurrent synchronizations senza cross-contamination."
+      }
+    ],
+    technologies: [
+      { name: "Go", proficiency: "Expert" },
+      { name: "Kotlin", proficiency: "Avanzato" },
+      { name: "gRPC", proficiency: "Avanzato" },
+      { name: "PostgreSQL", proficiency: "Avanzato" },
+      { name: "Kubernetes", proficiency: "Intermedio" },
+      { name: "SAP APIs", proficiency: "Intermedio" },
+    ],
+    techStack: {
+      title: "Stack Tecnologico",
+      items: [
+        { category: "Linguaggi", items: ["Go", "Kotlin", "YAML"] },
+        { category: "Piattaforme", items: ["Kubernetes", "Docker", "Linux"] },
+        { category: "Protocolli", items: ["gRPC", "REST APIs", "OAuth2"] },
+        { category: "Data Processing", items: ["Expr", "JSON Schema"] },
+        { category: "Storage", items: ["PostgreSQL", "Redis"] },
+        { category: "DevOps", items: ["Docker Compose", "GitHub Actions"] },
+      ]
+    },
+    metrics: [
+      { label: "Sistemi Integrati", value: "4+" },
+      { label: "Frequenza Sync Dati", value: "Real-time" },
+      { label: "Opzioni Field Mapping", value: "100+" },
+      { label: "Pipeline Success Rate", value: ">99.5%" },
+    ]
+  }
+};
+
+const page = content[locale];
+---
+
+<BaseLayout>
+  <div class="min-h-screen bg-primary dark:bg-secondary text-secondary dark:text-primary">
+    <!-- Hero Section -->
+    <div class="max-w-4xl mx-auto px-8 py-20">
+      <div class="mb-4">
+        <span class="text-sm font-medium text-secondary/60 dark:text-primary/60">{page.period}</span>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">{page.title}</h1>
+      <p class="text-xl text-secondary/80 dark:text-primary/80 mb-8">{page.subtitle}</p>
+      <p class="text-lg leading-relaxed text-secondary/75 dark:text-primary/75">{page.overview}</p>
+    </div>
+
+    <!-- Challenge & Solution -->
+    <div class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20">
+      <div class="grid md:grid-cols-2 gap-12">
+        <div>
+          <h2 class="text-2xl font-semibold mb-4">{locale === 'it' ? 'Sfida' : 'Challenge'}</h2>
+          <p class="text-secondary/75 dark:text-primary/75 leading-relaxed">{page.challenge}</p>
+        </div>
+        <div>
+          <h2 class="text-2xl font-semibold mb-4">{locale === 'it' ? 'Soluzione' : 'Solution'}</h2>
+          <p class="text-secondary/75 dark:text-primary/75 leading-relaxed">{page.solution}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Key Achievements -->
+    <div class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20">
+      <h2 class="text-3xl font-semibold mb-8">{locale === 'it' ? 'Risultati Chiave' : 'Key Achievements'}</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        {page.keyAchievements.map((achievement) => (
+          <div class="border-l-2 border-secondary/30 dark:border-primary/30 pl-6 py-2">
+            <h3 class="text-lg font-semibold mb-2">{achievement.title}</h3>
+            <p class="text-secondary/70 dark:text-primary/70 text-sm leading-relaxed">{achievement.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Metrics -->
+    <div class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20">
+      <h2 class="text-3xl font-semibold mb-8">{locale === 'it' ? 'Impatto' : 'Impact'}</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        {page.metrics.map((metric) => (
+          <div class="text-center">
+            <p class="text-4xl font-bold text-secondary dark:text-primary mb-2">{metric.value}</p>
+            <p class="text-sm text-secondary/60 dark:text-primary/60">{metric.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Tech Stack -->
+    <div class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20">
+      <h2 class="text-3xl font-semibold mb-8">{page.techStack.title}</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        {page.techStack.items.map((section) => (
+          <div>
+            <h3 class="font-semibold text-lg mb-3 text-secondary dark:text-primary">{section.category}</h3>
+            <div class="flex flex-wrap gap-2">
+              {section.items.map((item) => (
+                <span class="px-3 py-1 text-sm bg-secondary/10 dark:bg-primary/10 rounded-full text-secondary dark:text-primary">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Technologies -->
+    <div class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20">
+      <h2 class="text-3xl font-semibold mb-8">{locale === 'it' ? 'Tecnologie Usate' : 'Technologies Used'}</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        {page.technologies.map((tech) => (
+          <div class="p-4 border border-secondary/20 dark:border-primary/20 rounded-lg">
+            <p class="font-medium text-secondary dark:text-primary">{tech.name}</p>
+            <p class="text-sm text-secondary/60 dark:text-primary/60">{tech.proficiency}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Learnings -->
+    <div class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20 mb-20">
+      <h2 class="text-3xl font-semibold mb-4">{locale === 'it' ? 'Lezioni Chiave' : 'Key Learnings'}</h2>
+      <ul class="space-y-3 text-secondary/75 dark:text-primary/75">
+        <li class="flex gap-3">
+          <span class="text-secondary dark:text-primary">▸</span>
+          <span>{locale === 'it' ? 'Modularità e reusability sono critici per la scalabilità della integrazione' : 'Modularity and reusability are critical for integration scalability'}</span>
+        </li>
+        <li class="flex gap-3">
+          <span class="text-secondary dark:text-primary">▸</span>
+          <span>{locale === 'it' ? 'Go eccelle per building performant, scalable data pipelines' : 'Go excels at building performant, scalable data pipelines'}</span>
+        </li>
+        <li class="flex gap-3">
+          <span class="text-secondary dark:text-primary">▸</span>
+          <span>{locale === 'it' ? 'Configurazione-driven transformation abilita soluzioni altamente flessibili' : 'Configuration-driven transformation enables highly flexible solutions'}</span>
+        </li>
+        <li class="flex gap-3">
+          <span class="text-secondary dark:text-primary">▸</span>
+          <span>{locale === 'it' ? 'Orchestrazione robusta e observability sono essenziali per produzione pipelines' : 'Robust orchestration and observability are essential for production pipelines'}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</BaseLayout>

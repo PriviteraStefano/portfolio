@@ -1,0 +1,237 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { getLangFromUrl } from "../../../i18n/utils";
+
+export async function getStaticPaths() {
+  return [
+    { params: { locale: 'en' } },
+    { params: { locale: 'it' } },
+  ];
+}
+
+const locale = getLangFromUrl(Astro.url);
+
+const content = {
+  en: {
+    title: "Mobile Backend Modernization",
+    subtitle: "Kotlin + Spring Boot rewrite with hexagonal architecture",
+    period: "Oct - Dec 2024",
+    overview: "Completely rewrote the backend of the KMP mobile application from Java + MyBatis to Kotlin + Spring Boot, adopting hexagonal architecture and modern database patterns. Improved type safety, null safety, and code maintainability across multiple database systems.",
+    challenge: "The existing backend was built with Java + MyBatis against multiple database systems (MySQL, Oracle, SQL Server). The codebase had scattered business logic, poor separation of concerns, and lacked modern patterns. Upgrading was difficult and error-prone.",
+    solution: "Rewrote using Kotlin + Spring Boot with Kotlin Exposed ORM, providing: null safety preventing NullPointerExceptions, type-safe database queries, and cleaner syntax. Implemented hexagonal architecture separating input/output concerns from business logic, making testing and maintenance easier.",
+    keyAchievements: [
+      {
+        title: "Language Modernization",
+        description: "Migrated from Java to Kotlin bringing null safety, extension functions, coroutines support, and more expressive code reducing boilerplate by 40%."
+      },
+      {
+        title: "Type-Safe Database Access",
+        description: "Replaced MyBatis with Kotlin Exposed providing compile-time type safety for database queries, preventing runtime errors and improving IDE support."
+      },
+      {
+        title: "Hexagonal Architecture",
+        description: "Implemented ports and adapters pattern clearly separating API layers, business logic, and database access enabling better testing and maintenance."
+      },
+      {
+        title: "Multi-Database Support",
+        description: "Maintained backward compatibility with existing MySQL, Oracle, and SQL Server databases while improving performance and reliability."
+      },
+      {
+        title: "Code Quality Improvements",
+        description: "Introduced consistent patterns, better error handling, comprehensive logging, and observability throughout the application."
+      }
+    ],
+    technologies: [
+      { name: "Kotlin", proficiency: "Expert" },
+      { name: "Spring Boot", proficiency: "Expert" },
+      { name: "Kotlin Exposed", proficiency: "Advanced" },
+      { name: "PostgreSQL", proficiency: "Advanced" },
+      { name: "Oracle DB", proficiency: "Intermediate" },
+      { name: "SQL Server", proficiency: "Intermediate" },
+    ],
+    techStack: {
+      title: "Technical Stack",
+      items: [
+        { category: "Backend", items: ["Kotlin", "Spring Boot", "Coroutines"] },
+        { category: "ORM", items: ["Kotlin Exposed", "Spring Data"] },
+        { category: "Databases", items: ["PostgreSQL", "MySQL", "Oracle", "SQL Server"] },
+        { category: "API", items: ["REST", "Serialization", "Validation"] },
+        { category: "Testing", items: ["JUnit 5", "Testcontainers", "MockK"] },
+        { category: "DevOps", items: ["Docker", "Flyway Migrations"] },
+      ]
+    },
+    metrics: [
+      { label: "Code Size Reduction", value: "40%" },
+      { label: "Test Coverage", value: "85%+" },
+      { label: "Database Support", value: "3+" },
+      { label: "Performance Improvement", value: "+15%" },
+    ]
+  },
+  it: {
+    title: "Modernizzazione Backend Applicazione Mobile",
+    subtitle: "Riscrittura Kotlin + Spring Boot con hexagonal architecture",
+    period: "Ott - Dic 2024",
+    overview: "Ho completamente riscritto il backend dell'applicazione mobile KMP da Java + MyBatis a Kotlin + Spring Boot, adottando hexagonal architecture e modern database patterns. Ho migliorato type safety, null safety, code maintainability su multiple database systems.",
+    challenge: "Il backend esistente era costruito con Java + MyBatis contro multiple database systems (MySQL, Oracle, SQL Server). Codebase aveva scattered business logic, poor separation of concerns, mancavano modern patterns. Upgrade era difficile e error-prone.",
+    solution: "Ho riscritto usando Kotlin + Spring Boot con Kotlin Exposed ORM, fornendo: null safety prevenendo NullPointerExceptions, type-safe database queries, syntax più pulita. Ho implementato hexagonal architecture separando input/output concerns da business logic, rendendo testing e maintenance più facile.",
+    keyAchievements: [
+      {
+        title: "Modernizzazione Linguaggio",
+        description: "Ho migrato da Java a Kotlin portando null safety, extension functions, coroutines support, codice più espressivo riducendo boilerplate 40%."
+      },
+      {
+        title: "Type-Safe Database Access",
+        description: "Ho sostituito MyBatis con Kotlin Exposed fornendo compile-time type safety per database queries, prevenendo runtime errors migliorando IDE support."
+      },
+      {
+        title: "Hexagonal Architecture",
+        description: "Ho implementato ports e adapters pattern chiaramente separando API layers, business logic, database access abilitando migliore testing e maintenance."
+      },
+      {
+        title: "Supporto Multi-Database",
+        description: "Ho mantenuto backward compatibility con existing MySQL, Oracle, SQL Server databases migliorando performance e reliability."
+      },
+      {
+        title: "Miglioramenti Qualità Codice",
+        description: "Ho introdotto pattern consistenti, migliore error handling, comprehensive logging, observability su tutta l'applicazione."
+      }
+    ],
+    technologies: [
+      { name: "Kotlin", proficiency: "Expert" },
+      { name: "Spring Boot", proficiency: "Expert" },
+      { name: "Kotlin Exposed", proficiency: "Avanzato" },
+      { name: "PostgreSQL", proficiency: "Avanzato" },
+      { name: "Oracle DB", proficiency: "Intermedio" },
+      { name: "SQL Server", proficiency: "Intermedio" },
+    ],
+    techStack: {
+      title: "Stack Tecnologico",
+      items: [
+        { category: "Backend", items: ["Kotlin", "Spring Boot", "Coroutines"] },
+        { category: "ORM", items: ["Kotlin Exposed", "Spring Data"] },
+        { category: "Database", items: ["PostgreSQL", "MySQL", "Oracle", "SQL Server"] },
+        { category: "API", items: ["REST", "Serialization", "Validation"] },
+        { category: "Testing", items: ["JUnit 5", "Testcontainers", "MockK"] },
+        { category: "DevOps", items: ["Docker", "Flyway Migrations"] },
+      ]
+    },
+    metrics: [
+      { label: "Riduzione Dimensione Codice", value: "40%" },
+      { label: "Test Coverage", value: "85%+" },
+      { label: "Supporto Database", value: "3+" },
+      { label: "Miglioramento Performance", value: "+15%" },
+    ]
+  }
+};
+
+const page = content[locale];
+---
+
+<BaseLayout>
+  <div class="min-h-screen bg-primary dark:bg-secondary text-secondary dark:text-primary">
+    <!-- Hero Section -->
+    <div class="max-w-4xl mx-auto px-8 py-20">
+      <div class="mb-4">
+        <span class="text-sm font-medium text-secondary/60 dark:text-primary/60">{page.period}</span>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">{page.title}</h1>
+      <p class="text-xl text-secondary/80 dark:text-primary/80 mb-8">{page.subtitle}</p>
+      <p class="text-lg leading-relaxed text-secondary/75 dark:text-primary/75">{page.overview}</p>
+    </div>
+
+    <!-- Challenge & Solution -->
+    <div class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20">
+      <div class="grid md:grid-cols-2 gap-12">
+        <div>
+          <h2 class="text-2xl font-semibold mb-4">{locale === 'it' ? 'Sfida' : 'Challenge'}</h2>
+          <p class="text-secondary/75 dark:text-primary/75 leading-relaxed">{page.challenge}</p>
+        </div>
+        <div>
+          <h2 class="text-2xl font-semibold mb-4">{locale === 'it' ? 'Soluzione' : 'Solution'}</h2>
+          <p class="text-secondary/75 dark:text-primary/75 leading-relaxed">{page.solution}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Key Achievements -->
+    <div class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20">
+      <h2 class="text-3xl font-semibold mb-8">{locale === 'it' ? 'Risultati Chiave' : 'Key Achievements'}</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        {page.keyAchievements.map((achievement) => (
+          <div class="border-l-2 border-secondary/30 dark:border-primary/30 pl-6 py-2">
+            <h3 class="text-lg font-semibold mb-2">{achievement.title}</h3>
+            <p class="text-secondary/70 dark:text-primary/70 text-sm leading-relaxed">{achievement.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Metrics -->
+    <div class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20">
+      <h2 class="text-3xl font-semibold mb-8">{locale === 'it' ? 'Impatto' : 'Impact'}</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        {page.metrics.map((metric) => (
+          <div class="text-center">
+            <p class="text-4xl font-bold text-secondary dark:text-primary mb-2">{metric.value}</p>
+            <p class="text-sm text-secondary/60 dark:text-primary/60">{metric.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Tech Stack -->
+    <div class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20">
+      <h2 class="text-3xl font-semibold mb-8">{page.techStack.title}</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        {page.techStack.items.map((section) => (
+          <div>
+            <h3 class="font-semibold text-lg mb-3 text-secondary dark:text-primary">{section.category}</h3>
+            <div class="flex flex-wrap gap-2">
+              {section.items.map((item) => (
+                <span class="px-3 py-1 text-sm bg-secondary/10 dark:bg-primary/10 rounded-full text-secondary dark:text-primary">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Technologies -->
+    <div class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20">
+      <h2 class="text-3xl font-semibold mb-8">{locale === 'it' ? 'Tecnologie Usate' : 'Technologies Used'}</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        {page.technologies.map((tech) => (
+          <div class="p-4 border border-secondary/20 dark:border-primary/20 rounded-lg">
+            <p class="font-medium text-secondary dark:text-primary">{tech.name}</p>
+            <p class="text-sm text-secondary/60 dark:text-primary/60">{tech.proficiency}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Learnings -->
+    <div class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20 mb-20">
+      <h2 class="text-3xl font-semibold mb-4">{locale === 'it' ? 'Lezioni Chiave' : 'Key Learnings'}</h2>
+      <ul class="space-y-3 text-secondary/75 dark:text-primary/75">
+        <li class="flex gap-3">
+          <span class="text-secondary dark:text-primary">▸</span>
+          <span>{locale === 'it' ? 'Kotlin bring reale value con null safety e syntax cleaning portando legacy codebase' : 'Kotlin brings real value with null safety and syntax cleaning legacy codebase'}</span>
+        </li>
+        <li class="flex gap-3">
+          <span class="text-secondary dark:text-primary">▸</span>
+          <span>{locale === 'it' ? 'Hexagonal architecture rende codebase significantemente più testabile e maintainable' : 'Hexagonal architecture makes codebase significantly more testable and maintainable'}</span>
+        </li>
+        <li class="flex gap-3">
+          <span class="text-secondary dark:text-primary">▸</span>
+          <span>{locale === 'it' ? 'Type-safe database queries prevengono huge classe di runtime errors' : 'Type-safe database queries prevent huge class of runtime errors'}</span>
+        </li>
+        <li class="flex gap-3">
+          <span class="text-secondary dark:text-primary">▸</span>
+          <span>{locale === 'it' ? 'Backward compatibility deve essere considerata quando refactoring critical systems' : 'Backward compatibility must be considered when refactoring critical systems'}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</BaseLayout>

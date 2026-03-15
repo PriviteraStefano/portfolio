@@ -1,63 +1,114 @@
 ---
-// Define the array of projects directly in the frontmatter script.
+import { workProjects as workProjectsEn } from "../../data/en/workprojects";
+import { workProjects as workProjectsIt } from "../../data/it/workprojects";
+import { getLangFromUrl } from "../../i18n/utils";
 
-import {workProjects} from "../../data/en/workprojects";
+// Get locale from Astro context
+const locale = getLangFromUrl(Astro.url);
+const workProjects = locale === "it" ? workProjectsIt : workProjectsEn;
 
 // Function to calculate `data-aos-duration` based on index
 function calculateAosDuration(index: number) {
-  return 1500 + index * 500; // Example: Increment duration by 500ms for each project
+    return 1500 + index * 200;
 }
+
+const sectionTitle =
+    locale === "it"
+        ? { prefix: "Ultimi", bold: "progetti" }
+        : { prefix: "Latest", bold: "projects" };
+const learnMore = locale === "it" ? "Scopri di più" : "Learn more";
 ---
 
 <section class="bg-primary dark:bg-secondary">
-  <div class="px-8 2xl:max-w-7xl mx-auto py-32">
-    <div class="space-y-2">
-      <div
-          class="h-0.5 bg-secondary dark:bg-primary"
-          data-aos="fade-up"
-          data-aos-duration="1000"
-      >
-      </div>
-      <h3
-          class="text-secondary dark:text-primary text-base font-medium"
-          data-aos="fade-up"
-          data-aos-duration="1500"
-      >
-        <span>Latest</span>
-        <span class="font-bold">projects</span>
-      </h3>
-    </div>
-
-    <ul
-        class="mx-auto grid grid-cols-1 sm:grid-cols-2 text-secondary dark:text-primary md:grid-cols-3 lg:grid-cols-4 items-start gap-6 mt-32"
-        role="list"
-    >
-      {
-        workProjects.map((project, index) => (
-            <li
-                class="flow-root h-full"
+    <div class="px-8 2xl:max-w-7xl mx-auto py-32">
+        <div class="space-y-2">
+            <div
+                class="h-0.5 bg-secondary dark:bg-primary"
                 data-aos="fade-up"
-                data-aos-duration={calculateAosDuration(index)}
+                data-aos-duration="1000"
             >
-              <div class="h-full flex flex-col justify-between">
-                <div>
-                  <p class="group-hover:text-secondary dark:text-primary/70 text-secondary dark:text-primary text-9xl font-black lg:rotate-90 xl:-translate-x-28 lg:-translate-x-16 lg:mb-8 xl:mb-0">
-                    0{index + 1}.
-                  </p>
-                  <p class="italic shrink-0">{project.title}</p>
-                  <p class="text-base mt-3 leading-relaxed">
-                    {project.description}
-                  </p>
-                </div>
-                <div>
-                  <!--<p class="mt-3 text-base font-semibold">
-                    Learn more &nbsp; ↗
-                  </p>-->
-                </div>
-              </div>
-            </li>
-        ))
-      }
-    </ul>
-  </div>
+            </div>
+            <h3
+                class="text-secondary dark:text-primary text-base font-medium"
+                data-aos="fade-up"
+                data-aos-duration="1500"
+            >
+                <span>{sectionTitle.prefix}</span>
+                <span class="font-bold">{sectionTitle.bold}</span>
+            </h3>
+        </div>
+
+        <ul
+            class="mx-auto grid grid-cols-1 sm:grid-cols-2 text-secondary dark:text-primary md:grid-cols-2 lg:grid-cols-3 items-start gap-8 mt-32"
+            role="list"
+        >
+            {
+                workProjects.map((project, index) => (
+                    <li
+                        class="flow-root h-full"
+                        data-aos="fade-up"
+                        data-aos-duration={calculateAosDuration(index)}
+                    >
+                        <div class="h-full flex flex-col justify-between border-l-2 border-secondary dark:border-primary pl-4">
+                            <div>
+                                <div class="flex items-baseline justify-between mb-2">
+                                    <p class="text-secondary dark:text-primary/70 text-4xl font-black">
+                                        {String(index + 1).padStart(2, "0")}
+                                    </p>
+                                    {project.period && (
+                                        <p class="text-xs text-secondary dark:text-primary/60 italic">
+                                            {project.period}
+                                        </p>
+                                    )}
+                                </div>
+                                <p class="font-semibold text-secondary dark:text-primary text-lg mb-1">
+                                    {project.title}
+                                </p>
+                                <p class="text-sm mt-3 leading-relaxed text-secondary dark:text-primary/80">
+                                    {project.description}
+                                </p>
+                                {project.technologies &&
+                                    project.technologies.length > 0 && (
+                                        <div class="flex flex-wrap gap-1 mt-4">
+                                            {project.technologies.map(
+                                                (tech) => (
+                                                    <span class="inline-block px-2 py-1 text-xs bg-secondary dark:bg-primary bg-opacity-10 dark:bg-opacity-10 rounded text-secondary dark:text-primary">
+                                                        {tech}
+                                                    </span>
+                                                ),
+                                            )}
+                                        </div>
+                                    )}
+                                {project.highlights &&
+                                    project.highlights.length > 0 && (
+                                        <ul class="mt-4 space-y-1 text-sm text-secondary dark:text-primary/75">
+                                            {project.highlights
+                                                .slice(0, 3)
+                                                .map((highlight) => (
+                                                    <li class="flex items-start gap-2">
+                                                        <span class="text-secondary dark:text-primary/50 mt-1">
+                                                            ▸
+                                                        </span>
+                                                        <span>{highlight}</span>
+                                                    </li>
+                                                ))}
+                                        </ul>
+                                    )}
+                            </div>
+                            {project.url && (
+                                <div class="mt-4 pt-4 border-t border-secondary dark:border-primary border-opacity-20">
+                                    <a
+                                        href={`${project.url}`}
+                                        class="inline-flex items-center text-sm font-medium text-secondary dark:text-primary hover:opacity-70 transition-opacity"
+                                    >
+                                        {learnMore} &nbsp; ↗
+                                    </a>
+                                </div>
+                            )}
+                        </div>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
 </section>

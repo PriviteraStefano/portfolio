@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { getLangFromUrl } from "../../../i18n/utils";
 
 export async function getStaticPaths() {
   return [
@@ -7,7 +8,230 @@ export async function getStaticPaths() {
     { params: { locale: 'it' } },
   ];
 }
+
+const locale = getLangFromUrl(Astro.url);
+
+const content = {
+  en: {
+    title: "Kotlin Multiplatform Mobile App",
+    subtitle: "Complete reimplementation of 12+ year old warehouse system",
+    period: "2024 - Present",
+    overview: "Led a ground-up reimplementation of a legacy warehouse management application using modern Kotlin Multiplatform technology. The project demonstrates architectural excellence through its core library + modular plugin system design pattern.",
+    challenge: "The original application was built on Windows Mobile in the early 2010s, then ported to Android with Java and XML views. After 12+ years of evolution, it was outdated, difficult to extend, and incompatible with modern requirements.",
+    solution: "Chose Kotlin Multiplatform to future-proof the solution and enable code sharing across Android, iOS, desktop, and web. Built a modular architecture where clients can use the core library with custom modules, enabling rapid deployment to new clients without starting from scratch.",
+    keyAchievements: [
+      {
+        title: "Modular Architecture",
+        description: "Core library + independent modules pattern. Each client has their own repository using the shared core and personalized modules. Enables versioning and evolution independent of client implementations."
+      },
+      {
+        title: "Multi-ERP Support",
+        description: "Successfully integrated with both Oracle JDE and NetSuite. Extended from single warehouse use case to complete business solution including sales, operations, and management functions."
+      },
+      {
+        title: "Rapid Production Deployment",
+        description: "First production deployment within 3 months. Scaled to 2+ major clients with 6+ custom modules by end of first year."
+      },
+      {
+        title: "WASM Support",
+        description: "Added WebAssembly support enabling web distribution, removing need for client-side updates and opening new deployment scenarios."
+      },
+      {
+        title: "Technical Leadership",
+        description: "Managed as sole technical lead of business unit, directly interfacing with clients, marketing team, and cross-functional team members to understand requirements and deliver solutions."
+      }
+    ],
+    technologies: [
+      { name: "Kotlin", proficiency: "Expert" },
+      { name: "Kotlin Multiplatform", proficiency: "Expert" },
+      { name: "WebAssembly", proficiency: "Intermediate" },
+      { name: "Oracle JDE", proficiency: "Intermediate" },
+      { name: "NetSuite", proficiency: "Intermediate" },
+      { name: "Ktor", proficiency: "Intermediate" },
+    ],
+    techStack: {
+      title: "Technical Stack",
+      items: [
+        { category: "Language", items: ["Kotlin", "Kotlin Multiplatform"] },
+        { category: "Platforms", items: ["Android", "iOS", "Web (WASM)", "Desktop"] },
+        { category: "Networking", items: ["gRPC", "REST APIs", "OAuth2"] },
+        { category: "ERP Integration", items: ["Oracle JDE APIs", "NetSuite APIs"] },
+        { category: "Storage", items: ["SQLite", "PostgreSQL"] },
+        { category: "Development", items: ["IntelliJ IDEA", "Gradle", "GitHub"] },
+      ]
+    },
+    metrics: [
+      { label: "Clients in Production", value: "2+" },
+      { label: "Custom Modules", value: "6+" },
+      { label: "Time to Production", value: "3 months" },
+      { label: "Code Reusability (Shared Code)", value: "~65%" },
+    ]
+  },
+  it: {
+    title: "App Mobile Kotlin Multiplatform",
+    subtitle: "Reimplementazione completa di sistema magazzino datato 12+ anni",
+    period: "2024 - Presente",
+    overview: "Ho guidato una completa reimplementazione da zero di un'applicazione di gestione magazzino legacy usando moderna tecnologia Kotlin Multiplatform. Il progetto dimostra eccellenza architetturale attraverso il design pattern core library + sistema di moduli plugin.",
+    challenge: "L'applicazione originale è stata costruita su Windows Mobile nei primi anni 2010, poi portata su Android con Java e XML views. Dopo 12+ anni di evoluzione, era obsoleta, difficile da estendere, e incompatibile con requisiti moderni.",
+    solution: "Ho scelto Kotlin Multiplatform per future-proof della soluzione e abilitare code sharing su Android, iOS, desktop, e web. Ho costruito architettura modulare dove clienti usano libreria core con moduli personalizzati, abilitando deployment rapido a nuovi clienti senza ricominciare da zero.",
+    keyAchievements: [
+      {
+        title: "Architettura Modulare",
+        description: "Pattern core library + moduli indipendenti. Ogni cliente ha propria repository usando core condiviso e moduli personalizzati. Abilita versionamento e evoluzione indipendente da implementazioni cliente."
+      },
+      {
+        title: "Supporto Multi-ERP",
+        description: "Integrazione riuscita con Oracle JDE e NetSuite. Esteso da semplice magazzino a soluzione completa azienda includendo vendite, operazioni, funzioni gestione."
+      },
+      {
+        title: "Deployment Rapido in Produzione",
+        description: "Primo deployment produzione in 3 mesi. Scalato a 2+ clienti principali con 6+ moduli personalizzati entro fine primo anno."
+      },
+      {
+        title: "Supporto WASM",
+        description: "Aggiunto supporto WebAssembly abilitando distribuzione web, eliminando necessità aggiornamenti lato client e aprendo nuovi scenari deployment."
+      },
+      {
+        title: "Leadership Tecnico",
+        description: "Gestito come unico leader tecnico business unit, interfacciandomi direttamente con clienti, team marketing, e team cross-funzionali per capire requisiti e consegnare soluzioni."
+      }
+    ],
+    technologies: [
+      { name: "Kotlin", proficiency: "Expert" },
+      { name: "Kotlin Multiplatform", proficiency: "Expert" },
+      { name: "WebAssembly", proficiency: "Intermedio" },
+      { name: "Oracle JDE", proficiency: "Intermedio" },
+      { name: "NetSuite", proficiency: "Intermedio" },
+      { name: "Ktor", proficiency: "Intermedio" },
+    ],
+    techStack: {
+      title: "Stack Tecnologico",
+      items: [
+        { category: "Linguaggio", items: ["Kotlin", "Kotlin Multiplatform"] },
+        { category: "Piattaforme", items: ["Android", "iOS", "Web (WASM)", "Desktop"] },
+        { category: "Networking", items: ["gRPC", "REST APIs", "OAuth2"] },
+        { category: "Integrazione ERP", items: ["Oracle JDE APIs", "NetSuite APIs"] },
+        { category: "Storage", items: ["SQLite", "PostgreSQL"] },
+        { category: "Sviluppo", items: ["IntelliJ IDEA", "Gradle", "GitHub"] },
+      ]
+    },
+    metrics: [
+      { label: "Clienti in Produzione", value: "2+" },
+      { label: "Moduli Personalizzati", value: "6+" },
+      { label: "Tempo a Produzione", value: "3 mesi" },
+      { label: "Riusabilità Codice (Codice Condiviso)", value: "~65%" },
+    ]
+  }
+};
+
+const page = content[locale];
 ---
+
 <BaseLayout>
-  <div class="font-bold">KMP Application</div>
+  <div class="min-h-screen bg-primary dark:bg-secondary text-secondary dark:text-primary">
+    <!-- Hero Section -->
+    <div class="max-w-4xl mx-auto px-8 py-20">
+      <div class="mb-4">
+        <span class="text-sm font-medium text-secondary/60 dark:text-primary/60">{page.period}</span>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">{page.title}</h1>
+      <p class="text-xl text-secondary/80 dark:text-primary/80 mb-8">{page.subtitle}</p>
+      <p class="text-lg leading-relaxed text-secondary/75 dark:text-primary/75">{page.overview}</p>
+    </div>
+
+    <!-- Challenge & Solution -->
+    <div class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20">
+      <div class="grid md:grid-cols-2 gap-12">
+        <div>
+          <h2 class="text-2xl font-semibold mb-4">Challenge</h2>
+          <p class="text-secondary/75 dark:text-primary/75 leading-relaxed">{page.challenge}</p>
+        </div>
+        <div>
+          <h2 class="text-2xl font-semibold mb-4">Solution</h2>
+          <p class="text-secondary/75 dark:text-primary/75 leading-relaxed">{page.solution}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Key Achievements -->
+    <div class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20">
+      <h2 class="text-3xl font-semibold mb-8">Key Achievements</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        {page.keyAchievements.map((achievement) => (
+          <div class="border-l-2 border-secondary/30 dark:border-primary/30 pl-6 py-2">
+            <h3 class="text-lg font-semibold mb-2">{achievement.title}</h3>
+            <p class="text-secondary/70 dark:text-primary/70 text-sm leading-relaxed">{achievement.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Metrics -->
+    <div class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20">
+      <h2 class="text-3xl font-semibold mb-8">Impact</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        {page.metrics.map((metric) => (
+          <div class="text-center">
+            <p class="text-4xl font-bold text-secondary dark:text-primary mb-2">{metric.value}</p>
+            <p class="text-sm text-secondary/60 dark:text-primary/60">{metric.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Tech Stack -->
+    <div class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20">
+      <h2 class="text-3xl font-semibold mb-8">{page.techStack.title}</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        {page.techStack.items.map((section) => (
+          <div>
+            <h3 class="font-semibold text-lg mb-3 text-secondary dark:text-primary">{section.category}</h3>
+            <div class="flex flex-wrap gap-2">
+              {section.items.map((item) => (
+                <span class="px-3 py-1 text-sm bg-secondary/10 dark:bg-primary/10 rounded-full text-secondary dark:text-primary">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Technologies -->
+    <div class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20">
+      <h2 class="text-3xl font-semibold mb-8">Technologies Used</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        {page.technologies.map((tech) => (
+          <div class="p-4 border border-secondary/20 dark:border-primary/20 rounded-lg">
+            <p class="font-medium text-secondary dark:text-primary">{tech.name}</p>
+            <p class="text-sm text-secondary/60 dark:text-primary/60">{tech.proficiency}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Learnings -->
+    <div class="max-w-4xl mx-auto px-8 py-16 border-t border-secondary/20 dark:border-primary/20 mb-20">
+      <h2 class="text-3xl font-semibold mb-4">Key Learnings</h2>
+      <ul class="space-y-3 text-secondary/75 dark:text-primary/75">
+        <li class="flex gap-3">
+          <span class="text-secondary dark:text-primary">▸</span>
+          <span>Building modular, reusable architectures is crucial for enterprise scalability and rapid client onboarding</span>
+        </li>
+        <li class="flex gap-3">
+          <span class="text-secondary dark:text-primary">▸</span>
+          <span>Kotlin Multiplatform significantly accelerates development across multiple platforms while reducing code duplication</span>
+        </li>
+        <li class="flex gap-3">
+          <span class="text-secondary dark:text-primary">▸</span>
+          <span>Direct client engagement and understanding their workflow is essential for building relevant technical solutions</span>
+        </li>
+        <li class="flex gap-3">
+          <span class="text-secondary dark:text-primary">▸</span>
+          <span>Emerging technologies (like KMP and WASM) require strategic evaluation but offer significant competitive advantages</span>
+        </li>
+      </ul>
+    </div>
+  </div>
 </BaseLayout>
